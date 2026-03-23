@@ -47,19 +47,26 @@
     .section { margin-bottom: 40px; }
 
     .overview {
-      background: #1a2035; border: 1px solid #2a3050; border-radius: 10px;
+      border: 1px solid #2a3050; border-radius: 10px;
       padding: 24px 28px; margin-bottom: 40px;
+      background: #161b2e;
     }
     .overview h2 { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 18px; }
     .overview-groups { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    .overview-group {
+      border-radius: 8px; padding: 20px 22px;
+    }
+    .overview-group.grp-industry  { background: #1a2035; }
+    .overview-group.grp-product   { background: #1e2540; }
+    .overview-group.grp-tech      { background: #222b45; }
     .overview-group h3 {
-      font-size: 0.8rem; font-weight: 600; color: #ffffff;
-      text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 10px;
+      font-size: 1.1rem; font-weight: bold; color: #ffffff;
+      letter-spacing: 0.02em; margin-bottom: 14px;
     }
     .overview-group ul { list-style: none; padding: 0; }
     .overview-group ul li {
-      font-size: 0.85rem; color: #c8d0e0; padding: 6px 0;
-      border-bottom: 1px solid #232840; line-height: 1.55;
+      font-size: 0.85rem; color: #ffffff; padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1); line-height: 1.55;
     }
     .overview-group ul li:last-child { border-bottom: none; }
     .overview-group ul li::before { content: "—"; color: #ffffff; margin-right: 8px; }
@@ -144,14 +151,14 @@
   <div class="overview">
     <h2>本周速览</h2>
     <div class="overview-groups">
-      <div class="overview-group">
+      <div class="overview-group grp-industry">
         <h3>行业动态</h3>
         <ul>
           <li>Beautiful.ai 获 General Catalyst 4500 万美元融资，服务超 10 万家企业客户，覆盖 193 个国家</li>
           <li>Genspark Series B 轮总规模扩展至 3.85 亿美元，ARR 突破 2 亿美元，估值接近 16 亿美元</li>
         </ul>
       </div>
-      <div class="overview-group">
+      <div class="overview-group grp-product">
         <h3>产品更新</h3>
         <ul>
           <li>Gamma 发布 Gamma Imagine，从演示文稿扩展至 Logo、信息图、社交图文等品牌视觉资产生成</li>
@@ -159,7 +166,7 @@
           <li>Microsoft 365 Copilot Chat 将于 4 月 15 日起对付费与免费用户实施功能分层</li>
         </ul>
       </div>
-      <div class="overview-group">
+      <div class="overview-group grp-tech">
         <h3>技术趋势</h3>
         <ul>
           <li>Gamma 和 Beautiful.ai 均在本周发布 AI 驱动的视觉内容生成或工作流能力，演示工具向全链路创意生产延伸</li>
