@@ -3,432 +3,315 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OfficePLUS 竞品周报 | 2026-03-31</title>
+<title>OfficePLUS 竞品周报 2026-03-31</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
-    background: #0f1117;
-    color: #c9d1d9;
-    min-height: 100vh;
-  }
-  .page-wrapper { max-width: 1400px; margin: 0 auto; padding: 0 24px 60px; }
+  body { background: #0f1117; color: #e0e6f0; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 14px; line-height: 1.6; }
+  a { color: #4f8ef7; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .page-wrap { max-width: 1400px; margin: 0 auto; padding: 0 24px 48px; }
 
-  /* ======= HEADER ======= */
-  .header {
-    background: linear-gradient(135deg, #0d1b3e 0%, #1a2a5e 100%);
-    border-bottom: 1px solid #2d3748;
-    padding: 40px 24px 32px;
-    text-align: center;
-  }
-  .header-inner { max-width: 1400px; margin: 0 auto; }
-  .header h1 { font-size: 2rem; font-weight: 700; color: #ffffff; letter-spacing: 0.02em; margin-bottom: 8px; }
-  .header .subtitle { font-size: 0.88rem; color: #8b95a8; margin-bottom: 28px; }
-  .stats-row {
-    display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; margin-bottom: 16px;
-  }
-  .stat-box {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-    padding: 14px 22px;
-    min-width: 100px;
-    text-align: center;
-  }
+  /* Header */
+  .header { background: linear-gradient(135deg, #0d1426 0%, #1a2550 100%); padding: 40px 24px 32px; text-align: center; border-bottom: 1px solid #2a3560; }
+  .header h1 { font-size: 2rem; font-weight: 700; color: #ffffff; letter-spacing: 2px; margin-bottom: 8px; }
+  .header .subtitle { color: #8a9cc0; font-size: 0.85rem; margin-bottom: 28px; }
+  .stats-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 12px; }
+  .stat-box { background: rgba(79,142,247,0.08); border: 1px solid rgba(79,142,247,0.2); border-radius: 10px; padding: 14px 24px; min-width: 100px; text-align: center; }
   .stat-num { font-size: 2rem; font-weight: 700; color: #ffffff; line-height: 1; }
-  .stat-label { font-size: 0.75rem; color: #8b95a8; margin-top: 4px; }
-  .header-footnote { font-size: 0.78rem; color: #6b7280; margin-top: 6px; line-height: 1.7; }
+  .stat-label { font-size: 0.75rem; color: #8a9cc0; margin-top: 4px; }
+  .stat-box.red .stat-num { color: #f06060; }
+  .stat-box.yellow .stat-num { color: #f5c842; }
+  .stat-box.green .stat-num { color: #52c97a; }
+  .header-note { color: #6a7a98; font-size: 0.78rem; margin-top: 6px; }
 
-  /* ======= SECTION TITLES ======= */
-  .section { margin-top: 40px; }
-  .section-title {
-    font-size: 1.1rem; font-weight: 700; color: #e6edf3;
-    border-left: 3px solid #4f8ef7;
-    padding-left: 12px; margin-bottom: 8px;
-  }
-  .section-summary { font-size: 0.85rem; color: #8b95a8; margin-bottom: 20px; line-height: 1.6; }
-  .section-title-red { border-left-color: #f87171; }
-  .section-title-yellow { border-left-color: #fbbf24; }
-  .section-title-green { border-left-color: #6ee7b7; }
+  /* Section */
+  .section { margin: 36px 0 0; }
+  .section-title { font-size: 1.05rem; font-weight: 700; color: #4f8ef7; letter-spacing: 1px; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #1e2a50; display: flex; align-items: center; gap: 8px; }
+  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+  .dot-red { background: #f06060; }
+  .dot-yellow { background: #f5c842; }
+  .dot-green { background: #52c97a; }
+  .section-summary { color: #a0aec0; font-size: 0.85rem; margin-bottom: 18px; line-height: 1.7; }
 
-  /* ======= QUICK OVERVIEW ======= */
-  .overview-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-    margin-top: 16px;
-  }
-  @media (max-width: 860px) { .overview-grid { grid-template-columns: 1fr; } }
-  .overview-col {
-    border-radius: 10px;
-    padding: 20px;
-  }
-  .overview-col.red-col { background: #1a2035; }
-  .overview-col.yellow-col { background: #1e2540; }
-  .overview-col.green-col { background: #222b45; }
-  .overview-col-title { font-size: 1.1rem; font-weight: bold; color: #ffffff; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
-  .dot-red { width: 10px; height: 10px; border-radius: 50%; background: #f87171; display: inline-block; flex-shrink: 0; }
-  .dot-yellow { width: 10px; height: 10px; border-radius: 50%; background: #fbbf24; display: inline-block; flex-shrink: 0; }
-  .dot-green { width: 10px; height: 10px; border-radius: 50%; background: #6ee7b7; display: inline-block; flex-shrink: 0; }
-  .overview-item { display: flex; gap: 8px; margin-bottom: 10px; font-size: 0.85rem; color: #ffffff; line-height: 1.5; }
-  .overview-item::before { content: "—"; color: #ffffff; flex-shrink: 0; }
+  /* Cards */
+  .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 900px) { .cards-grid { grid-template-columns: 1fr; } }
+  .card { background: #1e2130; border-radius: 10px; padding: 18px 20px; border-left: 4px solid #333; position: relative; }
+  .card.red { border-left-color: #f06060; }
+  .card.yellow { border-left-color: #f5c842; }
+  .card.green { border-left-color: #52c97a; }
+  .card.new { border-left-color: #a78bfa; }
+  .today-badge { position: absolute; top: 14px; right: 16px; font-size: 0.7rem; color: #f5c842; font-weight: 600; letter-spacing: 0.5px; }
+  .card-product { display: inline-block; background: rgba(79,142,247,0.15); color: #7ab3ff; font-size: 0.72rem; font-weight: 600; padding: 2px 10px; border-radius: 20px; margin-bottom: 10px; }
+  .card-title { font-size: 0.95rem; font-weight: 600; color: #d8e4ff; margin-bottom: 8px; line-height: 1.5; }
+  .card-summary { font-size: 0.83rem; color: #9aaac0; line-height: 1.7; margin-bottom: 12px; }
+  .card-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+  .tag { font-size: 0.7rem; padding: 2px 9px; border-radius: 20px; font-weight: 500; }
+  .tag-event { background: rgba(79,142,247,0.15); color: #7ab3ff; }
+  .tag-red { background: rgba(240,96,96,0.15); color: #f08080; }
+  .tag-yellow { background: rgba(245,200,66,0.15); color: #f5d060; }
+  .tag-green { background: rgba(82,201,122,0.15); color: #70d490; }
+  .tag-new { background: rgba(167,139,250,0.15); color: #c4b5fd; }
+  .card-date { font-size: 0.75rem; color: #6a7a98; margin-bottom: 10px; }
+  .btn-source { display: inline-block; font-size: 0.75rem; color: #4f8ef7; border: 1px solid rgba(79,142,247,0.3); padding: 4px 12px; border-radius: 6px; }
+  .btn-source:hover { background: rgba(79,142,247,0.1); text-decoration: none; }
 
-  /* ======= COMPARISON ======= */
-  .comparison-box {
-    background: #1a1f2e;
-    border: 1px solid #2d3748;
-    border-radius: 10px;
-    padding: 24px;
-    margin-top: 16px;
-  }
-  .comparison-title { font-size: 1.05rem; font-weight: 700; color: #4f8ef7; margin-bottom: 16px; }
-  .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  @media (max-width: 700px) { .comparison-grid { grid-template-columns: 1fr; } }
-  .comp-section { margin-bottom: 12px; }
-  .comp-label { font-size: 0.82rem; font-weight: 600; color: #fbbf24; margin-bottom: 6px; }
-  .comp-row { font-size: 0.83rem; color: #c9d1d9; margin-bottom: 4px; line-height: 1.5; }
-  .comp-row span.dim { color: #6b7280; }
-  .comparison-new { margin-top: 16px; padding-top: 16px; border-top: 1px solid #2d3748; }
-  .comparison-new-label { font-size: 0.82rem; font-weight: 600; color: #6ee7b7; margin-bottom: 6px; }
-  .comparison-new-item { font-size: 0.83rem; color: #c9d1d9; margin-bottom: 4px; }
+  /* Overview */
+  .overview-title { font-size: 1.05rem; font-weight: 700; color: #4f8ef7; letter-spacing: 1px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #1e2a50; }
+  .overview-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  @media (max-width: 900px) { .overview-grid { grid-template-columns: 1fr; } }
+  .overview-col { border-radius: 10px; padding: 18px 20px; }
+  .ov-red { background: #1a2035; }
+  .ov-yellow { background: #1e2540; }
+  .ov-green { background: #222b45; }
+  .overview-col-title { font-size: 1.1rem; font-weight: bold; color: #ffffff; margin-bottom: 12px; }
+  .overview-col ul { list-style: none; }
+  .overview-col ul li { color: #ffffff; font-size: 0.83rem; line-height: 1.8; padding: 2px 0; }
+  .overview-col ul li::before { content: "— "; color: #ffffff; }
 
-  /* ======= CARDS ======= */
-  .cards-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-top: 4px;
-  }
-  @media (max-width: 860px) { .cards-grid { grid-template-columns: 1fr; } }
-  .card {
-    background: #1e2130;
-    border-radius: 10px;
-    border-left: 4px solid #4f8ef7;
-    padding: 18px 20px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .card.card-red { border-left-color: #f87171; }
-  .card.card-yellow { border-left-color: #fbbf24; }
-  .card.card-green { border-left-color: #6ee7b7; }
-  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
-  .card-product {
-    display: inline-block;
-    font-size: 0.72rem; font-weight: 600;
-    padding: 3px 8px; border-radius: 4px;
-    background: #2d3748; color: #a0aec0;
-    white-space: nowrap;
-  }
-  .card-today { font-size: 0.7rem; color: #fbbf24; font-weight: 600; white-space: nowrap; }
-  .card-title { font-size: 0.95rem; font-weight: 600; color: #e6edf3; line-height: 1.4; }
-  .card-summary { font-size: 0.83rem; color: #a0aec0; line-height: 1.6; }
-  .card-meta { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-  .tag {
-    display: inline-block; font-size: 0.7rem; font-weight: 600;
-    padding: 2px 8px; border-radius: 20px;
-  }
-  .tag-nature { background: #1d3a5f; color: #60a5fa; }
-  .tag-red { background: #3b1616; color: #f87171; }
-  .tag-yellow { background: #3b2e0f; color: #fbbf24; }
-  .tag-green { background: #0f2e25; color: #6ee7b7; }
-  .card-date { font-size: 0.75rem; color: #6b7280; margin-left: auto; }
-  .card-link {
-    display: inline-block;
-    font-size: 0.78rem; color: #4f8ef7;
-    text-decoration: none; border: 1px solid #2d4a8a;
-    padding: 4px 12px; border-radius: 4px;
-    transition: background 0.2s;
-    align-self: flex-start;
-  }
-  .card-link:hover { background: #1d3a6e; }
+  /* Compare */
+  .compare { background: #161c2e; border: 1px solid #1e2a50; border-radius: 10px; padding: 22px 24px; margin-top: 28px; }
+  .compare-title { font-size: 1rem; font-weight: 700; color: #4f8ef7; margin-bottom: 16px; }
+  .compare-row { margin-bottom: 18px; }
+  .compare-row:last-child { margin-bottom: 0; }
+  .compare-dim { font-size: 0.88rem; font-weight: 700; color: #c0cce8; margin-bottom: 6px; }
+  .compare-line { font-size: 0.82rem; color: #8a9cc0; line-height: 1.8; }
+  .compare-line .lbl { color: #6a7a98; margin-right: 4px; }
+  .compare-line .val { color: #a0b4d0; }
+  .compare-divider { height: 1px; background: #1e2a50; margin: 14px 0; }
+  .nv-title { font-size: 0.85rem; font-weight: 700; color: #a78bfa; margin: 14px 0 6px; }
+  .nv-list { list-style: none; }
+  .nv-list li { font-size: 0.82rem; color: #c4b5fd; padding: 2px 0; }
+  .nv-list li::before { content: "— "; }
 
-  /* ======= FOOTER ======= */
-  .footer-notes { margin-top: 50px; padding-top: 24px; border-top: 1px solid #2d3748; }
-  .footer-line { font-size: 0.78rem; color: #6b7280; line-height: 1.9; }
-  .footer-line span.highlight { color: #8b95a8; }
-  .footer-bar { margin-top: 16px; text-align: center; font-size: 0.75rem; color: #4a5568; }
-
-  /* ======= DIVIDER ======= */
-  .divider { border: none; border-top: 1px solid #2d3748; margin: 32px 0 0; }
+  /* Footer */
+  .footer-note { font-size: 0.78rem; color: #4a5878; line-height: 2; margin-top: 36px; }
+  .footer-bar { margin-top: 20px; padding-top: 14px; border-top: 1px solid #1a2240; font-size: 0.75rem; color: #3a4868; text-align: center; }
 </style>
 </head>
 <body>
 
-<!-- ======= HEADER ======= -->
 <div class="header">
-  <div class="header-inner">
+  <div class="page-wrap" style="padding:0;">
     <h1>OfficePLUS 竞品周报</h1>
     <div class="subtitle">监测周期：2026-03-24 ~ 2026-03-31 &nbsp;|&nbsp; 生成时间：2026-03-31</div>
-    <div class="stats-row">
-      <div class="stat-box">
-        <div class="stat-num">4</div>
-        <div class="stat-label">固定监测</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">5</div>
-        <div class="stat-label">本周资讯</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">2</div>
-        <div class="stat-label">产品动态</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">2</div>
-        <div class="stat-label">市场动态</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">1</div>
-        <div class="stat-label">行业趋势</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-num">0</div>
-        <div class="stat-label">新品监测</div>
-      </div>
+    <div class="stats-grid">
+      <div class="stat-box"><div class="stat-num">4</div><div class="stat-label">固定监测</div></div>
+      <div class="stat-box"><div class="stat-num">8</div><div class="stat-label">本周资讯</div></div>
+      <div class="stat-box red"><div class="stat-num">3</div><div class="stat-label">产品动态</div></div>
+      <div class="stat-box yellow"><div class="stat-num">2</div><div class="stat-label">市场动态</div></div>
+      <div class="stat-box green"><div class="stat-num">2</div><div class="stat-label">行业趋势</div></div>
+      <div class="stat-box"><div class="stat-num">1</div><div class="stat-label">新品监测</div></div>
     </div>
-    <div class="header-footnote">
-      固定监测（本期有更新）：Microsoft 365 &nbsp;·&nbsp; 天工 &nbsp;·&nbsp; Gamma &nbsp;·&nbsp; WPS AI
+    <div class="header-note">固定监测（本期有更新）：Microsoft 365 &nbsp;·&nbsp; AiPPT &nbsp;·&nbsp; Gamma &nbsp;·&nbsp; 天工</div>
+    <div class="header-note">新品监测（本期新增）：MiniMax Office Skills</div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+<!-- 本周速览 -->
+<div class="section">
+  <div class="overview-title">本周速览</div>
+  <div class="overview-grid">
+    <div class="overview-col ov-red">
+      <div class="overview-col-title">产品动态</div>
+      <ul>
+        <li>Microsoft 365 Copilot Cowork 开放 Frontier 早期访问，跨 Office 应用执行多步任务</li>
+        <li>Microsoft 365 宣布4月15日关闭 Word/Excel/PowerPoint 内免费 Copilot Chat</li>
+        <li>AiPPT.com 发布 AiPPT Visual，幻灯片内嵌 Nano Banana 2 AI 图像生成</li>
+      </ul>
+    </div>
+    <div class="overview-col ov-yellow">
+      <div class="overview-col-title">市场动态</div>
+      <ul>
+        <li>Microsoft 365 商业版宣布2026年7月全线调价</li>
+        <li>昆仑万维在中关村论坛发布"3+1" AGI 战略，整合视频、音乐、教育三大创作平台</li>
+      </ul>
+    </div>
+    <div class="overview-col ov-green">
+      <div class="overview-col-title">行业趋势</div>
+      <ul>
+        <li>Gamma 新增30种编程语言语法高亮，演示工具向技术场景持续延伸</li>
+        <li>昆仑万维集中发布 SkyReels V4、Mureka V9、Matrix-Game 3.0 三大模型</li>
+        <li>MiniMax 开源 Office Skills 含 PPTX 生成能力，AI 办公进入开源赛道</li>
+      </ul>
     </div>
   </div>
 </div>
 
-<div class="page-wrapper">
+<!-- 与上期对比 -->
+<div class="compare">
+  <div class="compare-title">与上期对比</div>
 
-  <!-- ======= 本周速览 ======= -->
-  <div class="section">
-    <div class="section-title">本周速览</div>
-    <div class="overview-grid">
-      <div class="overview-col red-col">
-        <div class="overview-col-title"><span class="dot-red"></span>产品动态</div>
-        <div class="overview-item">Microsoft 365 推出 Copilot Cowork，跨 M365 应用执行复杂多步任务，由 Claude 模型驱动，通过 Frontier 项目开放</div>
-        <div class="overview-item">微软宣布 2026年4月15日起对商业用户关闭 Office 内免费 Copilot Chat，需付费订阅继续使用</div>
+  <div class="compare-row">
+    <div class="compare-dim">产品动态</div>
+    <div class="compare-line"><span class="lbl">上期：</span><span class="val">AiPPT 集成 Nano Banana 2；Gamma 推出 Gamma Imagine；Beautiful.ai 上线对话式 AI 工作流</span></div>
+    <div class="compare-line"><span class="lbl">本期：</span><span class="val">Microsoft 365 主导本周，Copilot Cowork 开放并宣布关闭免费 Copilot Chat；AiPPT Visual 正式发布</span></div>
+    <div class="compare-line"><span class="lbl">变化：</span><span class="val">产品动态焦点从国际创业产品转移至 Microsoft 365 平台级动作</span></div>
+  </div>
+  <div class="compare-divider"></div>
+
+  <div class="compare-row">
+    <div class="compare-dim">市场动态</div>
+    <div class="compare-line"><span class="lbl">上期：</span><span class="val">Genspark B 轮融资达 3.85 亿美元；Canva 发布收购后首个 Affinity 重大更新</span></div>
+    <div class="compare-line"><span class="lbl">本期：</span><span class="val">Microsoft 365 宣布7月商业版调价；昆仑万维发布"3+1" AGI 战略</span></div>
+    <div class="compare-line"><span class="lbl">变化：</span><span class="val">融资事件退场，平台定价调整与战略布局成为本周市场主线</span></div>
+  </div>
+  <div class="compare-divider"></div>
+
+  <div class="compare-row">
+    <div class="compare-dim">行业趋势</div>
+    <div class="compare-line"><span class="lbl">上期：</span><span class="val">Genspark Claw 以 AI 员工形态发布；天工 SkyReels V4 登顶视频生成全球榜</span></div>
+    <div class="compare-line"><span class="lbl">本期：</span><span class="val">Gamma 向技术演示场景延伸；昆仑万维三大模型集中亮相；MiniMax 开源办公文档生成引擎</span></div>
+    <div class="compare-line"><span class="lbl">变化：</span><span class="val">AI 工具能力边界持续向垂直场景（技术演示、多模态创作）扩展</span></div>
+  </div>
+  <div class="compare-divider"></div>
+
+  <div class="nv-title">新变量</div>
+  <ul class="nv-list">
+    <li>MiniMax Office Skills 开源 PPT/文档生成引擎进入公众视野，AI 原生办公工具开源赛道出现新入局者</li>
+  </ul>
+</div>
+
+<!-- 产品动态 -->
+<div class="section">
+  <div class="section-title"><span class="dot dot-red"></span>产品动态</div>
+  <div class="section-summary">Microsoft 365 本周连续发布 Copilot Cowork 并宣布关闭免费 Copilot Chat；AiPPT 推出幻灯片内嵌 AI 图像生成功能 AiPPT Visual。</div>
+  <div class="cards-grid">
+
+    <div class="card red">
+      <span class="today-badge">今日更新</span>
+      <div class="card-product">Microsoft 365</div>
+      <div class="card-title">Copilot Cowork 通过 Frontier 项目向早期用户开放</div>
+      <div class="card-summary">微软推出 Copilot Cowork，支持跨 Outlook、Teams、Excel 等 Microsoft 365 应用执行复杂多步任务，由 Anthropic Claude 模型提供支持。用户描述目标后 AI 自动制定计划并推进工作，过程可见且可随时介入，当前通过 Frontier 项目面向早期用户限量开放。</div>
+      <div class="card-meta">
+        <span class="tag tag-event">功能发布</span>
+        <span class="tag tag-red">产品动态</span>
       </div>
-      <div class="overview-col yellow-col">
-        <div class="overview-col-title"><span class="dot-yellow"></span>市场动态</div>
-        <div class="overview-item">微软宣布 2026年7月起商业版 Microsoft 365 全线涨价，Business Basic 从 $6 涨至 $7</div>
-        <div class="overview-item">昆仑万维在2026中关村论坛发布三大模型（Matrix-Game 3.0、SkyReels V4、Mureka V9）及"3+1"AGI战略，SkyReels V4 全球视频评测排名第一</div>
+      <div class="card-date">原文日期：2026-03-30</div>
+      <a class="btn-source" href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/" target="_blank">查看原文</a>
+    </div>
+
+    <div class="card red">
+      <div class="card-product">Microsoft 365</div>
+      <div class="card-title">4月15日起 Word/Excel/PowerPoint 内免费 Copilot Chat 下线</div>
+      <div class="card-summary">微软将于2026年4月15日对 Word、Excel、PowerPoint、OneNote 数百万 Microsoft 365 商业用户关闭免费 Copilot Chat 功能，受影响用户需升级至付费订阅方可继续使用 Office 应用内嵌 AI 对话功能。</div>
+      <div class="card-meta">
+        <span class="tag tag-event">版本迭代</span>
+        <span class="tag tag-red">产品动态</span>
       </div>
-      <div class="overview-col green-col">
-        <div class="overview-col-title"><span class="dot-green"></span>行业趋势</div>
-        <div class="overview-item">Gamma 持续在演示工具中迭代代码与技术内容展示能力（代码块30语言语法高亮，2026-03-25）</div>
-        <div class="overview-item">AI 演示工具向"代理化"方向演进：Genspark Claw、Copilot Cowork 等本期均以 AI 员工或自动化任务执行形态发布</div>
+      <div class="card-date">原文日期：2026-03-24</div>
+      <a class="btn-source" href="https://office-watch.com/2026/microsoft-removes-copilot-chat-word-excel-powerpoint-april-2026/" target="_blank">查看原文</a>
+    </div>
+
+    <div class="card red">
+      <div class="card-product">AiPPT</div>
+      <div class="card-title">AiPPT.com 推出 AiPPT Visual，集成 Nano Banana 2 图像模型</div>
+      <div class="card-summary">AiPPT.com 升级 AI 图像生成器至 Nano Banana 2 模型，推出 AiPPT Visual 功能。用户可在演示编辑器内将提示词或上传文档直接生成图像风格幻灯片，无需切换外部工具，支持处理研究报告等复杂长文档场景。</div>
+      <div class="card-meta">
+        <span class="tag tag-event">功能发布</span>
+        <span class="tag tag-red">产品动态</span>
       </div>
+      <div class="card-date">原文日期：2026-03-23</div>
+      <a class="btn-source" href="https://www.prnewswire.com/news-releases/aipptcom-enhances-its-ai-image-generator-with-nano-banana-2-to-support-smarter-slide-302721895.html" target="_blank">查看原文</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- 市场动态 -->
+<div class="section">
+  <div class="section-title"><span class="dot dot-yellow"></span>市场动态</div>
+  <div class="section-summary">Microsoft 365 宣布7月商业版调价；昆仑万维在中关村论坛发布"3+1" AGI 战略，整合旗下多条 AI 原生产品线。</div>
+  <div class="cards-grid">
+
+    <div class="card yellow">
+      <div class="card-product">Microsoft 365</div>
+      <div class="card-title">2026年7月起商业版 Microsoft 365 全线调价</div>
+      <div class="card-summary">微软宣布2026年7月1日起全球商业版 Microsoft 365 套件调价：Business Basic 从 $6 涨至 $7，Business Standard 从 $12.5 涨至 $14，E3/E5 企业版同步上调，并同步新增安全功能捆绑套餐选项。</div>
+      <div class="card-meta">
+        <span class="tag tag-event">市场动态</span>
+        <span class="tag tag-yellow">市场动态</span>
+      </div>
+      <div class="card-date">原文日期：2026-03-24</div>
+      <a class="btn-source" href="https://windowsforum.com/threads/microsoft-365-pricing-packaging-update-2026-july-price-rise-new-security-bundles.407267/" target="_blank">查看原文</a>
+    </div>
+
+    <div class="card yellow">
+      <div class="card-product">天工</div>
+      <div class="card-title">昆仑万维发布"3+1" AGI 战略生态架构</div>
+      <div class="card-summary">昆仑万维在2026中关村论坛发布"3+1" AGI 战略：以4个 SOTA 大模型为底座，支撑 DramaWave（视频）、Mureka（音乐）、猫森学园（教育）三大 AI 原生平台，加1个超级智能体，构建跨内容类型的创作闭环生态。</div>
+      <div class="card-meta">
+        <span class="tag tag-event">战略合作</span>
+        <span class="tag tag-yellow">市场动态</span>
+      </div>
+      <div class="card-date">原文日期：2026-03-28</div>
+      <a class="btn-source" href="https://finance.sina.com.cn/roll/2026-03-28/doc-inhspfma5966159.shtml" target="_blank">查看原文</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- 行业趋势 -->
+<div class="section">
+  <div class="section-title"><span class="dot dot-green"></span>行业趋势</div>
+  <div class="section-summary">Gamma 向技术演示场景持续延伸；昆仑万维三大模型集中亮相，多模态内容生成能力持续升级。</div>
+  <div class="cards-grid">
+
+    <div class="card green">
+      <div class="card-product">Gamma</div>
+      <div class="card-title">Gamma 代码块新增30种编程语言语法高亮</div>
+      <div class="card-summary">Gamma 更新代码块功能，新增支持30种编程语言的语法高亮，适配亮色与暗色两种主题，进一步扩展技术类演示文稿的展示场景，向开发者和技术用户群体延伸。</div>
+      <div class="card-meta">
+        <span class="tag tag-event">版本迭代</span>
+        <span class="tag tag-green">行业趋势</span>
+      </div>
+      <div class="card-date">原文日期：2026-03-25</div>
+      <a class="btn-source" href="https://meetgamma.canny.io/changelog" target="_blank">查看原文</a>
+    </div>
+
+    <div class="card green">
+      <div class="card-product">天工</div>
+      <div class="card-title">昆仑万维发布 SkyReels V4、Mureka V9、Matrix-Game 3.0 三大模型</div>
+      <div class="card-summary">昆仑万维于2026中关村论坛集中发布三大模型：SkyReels V4 在 Text-to-Video With Audio 全球排名第一并开放 API；Mureka V9 提升音乐段落级文本控制与混音质量；Matrix-Game 3.0 支持720P/40FPS 游戏世界生成。</div>
+      <div class="card-meta">
+        <span class="tag tag-event">功能发布</span>
+        <span class="tag tag-green">行业趋势</span>
+      </div>
+      <div class="card-date">原文日期：2026-03-28</div>
+      <a class="btn-source" href="https://www.chinanews.com.cn/cj/2026/03-28/10594432.shtml" target="_blank">查看原文</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- 新品监测 -->
+<div class="section">
+  <div class="section-title" style="color:#a78bfa; border-bottom-color:#2a2050;">新品监测</div>
+  <div style="font-size:0.82rem; color:#7a6ab0; font-weight:600; letter-spacing:0.5px; margin-bottom:12px;">演示 / PPT</div>
+  <div class="cards-grid">
+    <div class="card new">
+      <div class="card-product" style="background:rgba(167,139,250,0.12); color:#c4b5fd;">MiniMax Office Skills</div>
+      <div class="card-title">MiniMax 开源生产级办公文档引擎，含 PPTX 生成能力</div>
+      <div class="card-summary">MiniMax（稀宇科技）正式开源 Office Skills 工具包（MIT 协议），覆盖 Word（docx）、Excel（xlsx）、PDF、PPT（pptx）四种格式的文档生成与编辑能力。其中 PPTX Generator 基于 python-pptx 构建，定位"可交付级"输出，无需人工二次整理，是继编程类 Skills 库后 MiniMax 在 AI 办公领域的首个开源动作。</div>
+      <div class="card-meta">
+        <span class="tag tag-event">开源项目</span>
+        <span class="tag tag-new">新品监测</span>
+      </div>
+      <div class="card-date">原文日期：2026-03-25</div>
+      <a class="btn-source" href="https://github.com/MiniMax-AI/skills" target="_blank">查看原文</a>
     </div>
   </div>
+</div>
 
-  <!-- ======= 与上期对比 ======= -->
-  <div class="section">
-    <div class="section-title">与上期对比</div>
-    <div class="comparison-box">
-      <div class="comparison-title">本期（2026-03-24 ~ 2026-03-31）vs 上期（2026-03-17 ~ 2026-03-24）</div>
-      <div class="comparison-grid">
-        <div>
-          <div class="comp-section">
-            <div class="comp-label">产品动态</div>
-            <div class="comp-row"><span class="dim">上期：</span>AiPPT 集成 Nano Banana 2 图像模型，幻灯片内直接生成配图</div>
-            <div class="comp-row"><span class="dim">本期：</span>Microsoft 365 推出 Copilot Cowork 多应用自动任务执行；微软关闭 Office 内免费 Copilot Chat</div>
-            <div class="comp-row"><span class="dim">变化：</span>主角从 AI 图像生成转向 AI 任务代理与功能付费化</div>
-          </div>
-          <div class="comp-section">
-            <div class="comp-label">市场动态</div>
-            <div class="comp-row"><span class="dim">上期：</span>Genspark B 轮扩展至 3.85 亿美元，估值约 16 亿美元</div>
-            <div class="comp-row"><span class="dim">本期：</span>微软商业版 M365 宣布 7月涨价；昆仑万维三大模型发布并升级 AGI 战略</div>
-            <div class="comp-row"><span class="dim">变化：</span>融资扩张动态减少，头部厂商开始向定价调整与战略收口转变</div>
-          </div>
-        </div>
-        <div>
-          <div class="comp-section">
-            <div class="comp-label">行业趋势</div>
-            <div class="comp-row"><span class="dim">上期：</span>Gamma Imagine 发布，进入视觉内容生成赛道；Beautiful.ai 获融资并发布 AI 工作流</div>
-            <div class="comp-row"><span class="dim">本期：</span>Gamma 迭代技术内容展示能力；Copilot Cowork 与 Genspark Claw 以"AI员工"形态出现</div>
-            <div class="comp-row"><span class="dim">变化：</span>视觉生成探索趋于收敛，AI 代理执行任务成为新的发布重心</div>
-          </div>
-        </div>
-      </div>
-      <div class="comparison-new">
-        <div class="comparison-new-label">新变量</div>
-        <div class="comparison-new-item">— 昆仑万维"3+1"AGI战略：以4个SOTA大模型为底座，首次系统化提出覆盖视频、游戏、音乐三大内容赛道的全栈战略</div>
-      </div>
-    </div>
-  </div>
+<!-- Footer -->
+<div class="footer-note">
+  本周无新动态：Genspark &nbsp;·&nbsp; 百度文库 &nbsp;·&nbsp; WPS AI &nbsp;·&nbsp; iSlide &nbsp;·&nbsp; Beautiful.ai &nbsp;·&nbsp; Canva<br>
+  固定监测（共10款）：微软 Office 生态 &nbsp;·&nbsp; AiPPT &nbsp;·&nbsp; Genspark &nbsp;·&nbsp; 百度文库 &nbsp;·&nbsp; WPS AI &nbsp;·&nbsp; iSlide &nbsp;·&nbsp; Gamma &nbsp;·&nbsp; Beautiful.ai &nbsp;·&nbsp; Canva &nbsp;·&nbsp; 天工
+</div>
+<div class="footer-bar">OfficePLUS 竞品周报 &nbsp;|&nbsp; 数据截止 2026-03-31 &nbsp;|&nbsp; 由 Claude Code 自动生成</div>
 
-  <!-- ======= 产品动态 RED ======= -->
-  <hr class="divider">
-  <div class="section">
-    <div class="section-title section-title-red">产品动态</div>
-    <div class="section-summary">本期产品动态集中于 Microsoft 365：Copilot Cowork 发布，并宣布关闭 Office 内免费 Copilot Chat 入口，两项变化均直接影响商业用户的 AI 使用路径。</div>
-    <div class="cards-grid">
-
-      <!-- Card 1 -->
-      <div class="card card-red">
-        <div class="card-top">
-          <span class="card-product">Microsoft 365</span>
-          <span class="card-today">今日更新</span>
-        </div>
-        <div class="card-title">Copilot Cowork 通过 Frontier 项目向早期用户开放</div>
-        <div class="card-summary">微软推出 Copilot Cowork，支持跨 Outlook、Teams、Excel 等 Microsoft 365 应用执行复杂多步任务，由 Anthropic Claude 模型提供支持。用户描述目标后，AI 自动制定计划、推进并跟踪工作进度，当前通过 Frontier 早期访问项目开放。</div>
-        <div class="card-meta">
-          <span class="tag tag-nature">功能发布</span>
-          <span class="tag tag-red">产品动态</span>
-          <span class="card-date">原文日期：2026-03-30</span>
-        </div>
-        <a class="card-link" href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/" target="_blank">查看原文</a>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="card card-red">
-        <div class="card-top">
-          <span class="card-product">Microsoft 365</span>
-        </div>
-        <div class="card-title">4月15日起商业用户 Office 内免费 Copilot Chat 功能下线</div>
-        <div class="card-summary">微软将于2026年4月15日对 Word、Excel、PowerPoint、OneNote 中数百万 Microsoft 365 商业用户关闭免费 Copilot Chat 功能，用户需付费订阅 Microsoft 365 Copilot 套餐方可继续使用 Office 应用内 AI 对话功能。</div>
-        <div class="card-meta">
-          <span class="tag tag-nature">版本迭代</span>
-          <span class="tag tag-red">产品动态</span>
-          <span class="card-date">原文日期：2026-03-24</span>
-        </div>
-        <a class="card-link" href="https://office-watch.com/2026/microsoft-removes-copilot-chat-word-excel-powerpoint-april-2026/" target="_blank">查看原文</a>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ======= 市场动态 YELLOW ======= -->
-  <hr class="divider">
-  <div class="section">
-    <div class="section-title section-title-yellow">市场动态</div>
-    <div class="section-summary">微软宣布 7月商业版涨价，涉及 M365 全线套餐；昆仑万维在中关村论坛发布三大模型并升级 AGI 战略，将内容生产工具与 SOTA 大模型深度绑定。</div>
-    <div class="cards-grid">
-
-      <!-- Card 3 -->
-      <div class="card card-yellow">
-        <div class="card-top">
-          <span class="card-product">Microsoft 365</span>
-        </div>
-        <div class="card-title">2026年7月起商业版 Microsoft 365 全线涨价</div>
-        <div class="card-summary">微软宣布2026年7月1日起全球商业版 Microsoft 365 套件涨价：Business Basic 从 $6 涨至 $7，Business Standard 从 $12.5 涨至 $14，E3/E5 同步上调，并新增安全捆绑套餐。此次调价覆盖全球商业用户，中国区具体政策待确认。</div>
-        <div class="card-meta">
-          <span class="tag tag-nature">市场动态</span>
-          <span class="tag tag-yellow">市场动态</span>
-          <span class="card-date">原文日期：2026-03-24</span>
-        </div>
-        <a class="card-link" href="https://windowsforum.com/threads/microsoft-365-pricing-packaging-update-2026-july-price-rise-new-security-bundles.407267/" target="_blank">查看原文</a>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="card card-yellow">
-        <div class="card-top">
-          <span class="card-product">天工</span>
-        </div>
-        <div class="card-title">昆仑万维中关村论坛发布三大模型及"3+1"AGI战略</div>
-        <div class="card-summary">昆仑万维在2026中关村论坛正式发布三大模型：Matrix-Game 3.0（720P/40FPS实时生成）、SkyReels V4（全球 Text-to-Video 评测排名第一）、Mureka V9（音乐模型），并将 AGI 战略升级为"3+1"架构——4个SOTA大模型底座支撑3大AI原生平台及1个超级智能体。</div>
-        <div class="card-meta">
-          <span class="tag tag-nature">战略合作</span>
-          <span class="tag tag-yellow">市场动态</span>
-          <span class="card-date">原文日期：2026-03-28</span>
-        </div>
-        <a class="card-link" href="https://www.chinanews.com.cn/cj/2026/03-28/10594432.shtml" target="_blank">查看原文</a>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ======= 行业趋势 GREEN ======= -->
-  <hr class="divider">
-  <div class="section">
-    <div class="section-title section-title-green">行业趋势</div>
-    <div class="section-summary">Gamma 在演示工具中持续迭代技术内容展示体验，本期新增代码块多语言语法高亮，反映演示工具向专业技术场景渗透的方向。</div>
-    <div class="cards-grid">
-
-      <!-- Card 5 -->
-      <div class="card card-green">
-        <div class="card-top">
-          <span class="card-product">Gamma</span>
-        </div>
-        <div class="card-title">Gamma 代码块支持 30 种语言语法高亮</div>
-        <div class="card-summary">Gamma changelog 更新（2026-03-25）：代码块现已支持 30 种编程语言的自动语法高亮显示，适配浅色和深色主题。此次更新提升了代码内容在演示文稿和文档中的可读性与视觉呈现效果，对技术类内容创作场景有直接影响。</div>
-        <div class="card-meta">
-          <span class="tag tag-nature">版本迭代</span>
-          <span class="tag tag-green">行业趋势</span>
-          <span class="card-date">原文日期：2026-03-25</span>
-        </div>
-        <a class="card-link" href="https://meetgamma.canny.io/changelog" target="_blank">查看原文</a>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ======= 参考背景：时间窗口略早，供参考 ======= -->
-  <hr class="divider">
-  <div class="section">
-    <div class="section-title" style="border-left-color:#4b5563; color:#6b7280;">参考背景（2026-03-24 前，供参考）</div>
-    <div class="section-summary" style="color:#6b7280;">以下条目发布于本期时间窗口前，但仍属本月近期动态，列出供上下文参考，不计入本期统计数字。</div>
-    <div class="cards-grid">
-
-      <div class="card" style="border-left-color:#4b5563; opacity:0.72;">
-        <div class="card-top"><span class="card-product">AiPPT</span></div>
-        <div class="card-title">AiPPT Visual 上线，集成 Nano Banana 2 图像模型</div>
-        <div class="card-summary">AiPPT.com 升级 AI 图像生成器至 Nano Banana 2 模型，推出 AiPPT Visual，用户可在演示编辑器内将提示词或文档直接生成图像风格幻灯片，支持处理研究报告等复杂长文档，无需切换外部工具。</div>
-        <div class="card-meta">
-          <span class="tag tag-nature">功能发布</span>
-          <span class="card-date">原文日期：2026-03-23</span>
-        </div>
-        <a class="card-link" href="https://www.prnewswire.com/news-releases/aipptcom-enhances-its-ai-image-generator-with-nano-banana-2-to-support-smarter-slide-302721895.html" target="_blank">查看原文</a>
-      </div>
-
-      <div class="card" style="border-left-color:#4b5563; opacity:0.72;">
-        <div class="card-top"><span class="card-product">WPS AI</span></div>
-        <div class="card-title">WPS for Pad 登顶苹果 App Store 免费榜</div>
-        <div class="card-summary">金山办公发布 WPS for Pad，采用与 PC 版共享统一内核技术，在 iPad 上实现桌面级办公体验，内置 WPS AI 3.0。上线后迅速登顶苹果应用商店免费下载榜首，大陆版本正在备案审核中（港区先行）。</div>
-        <div class="card-meta">
-          <span class="tag tag-nature">版本迭代</span>
-          <span class="card-date">原文日期：2026-03-20</span>
-        </div>
-        <a class="card-link" href="https://36kr.com/p/3731102398923016" target="_blank">查看原文</a>
-      </div>
-
-      <div class="card" style="border-left-color:#4b5563; opacity:0.72;">
-        <div class="card-top"><span class="card-product">Beautiful.ai</span></div>
-        <div class="card-title">Beautiful.ai 3.0 发布，推出上下文感知 AI 工作流</div>
-        <div class="card-summary">Beautiful.ai 发布 3.0 版本，引入上下文感知 AI 工作流，支持文本提示、大纲或文档导入生成演示文稿，提供对话式迭代体验；同步获得 General Catalyst 4500 万美元投资，用于全球扩张和多语言本地化（15种语言）。</div>
-        <div class="card-meta">
-          <span class="tag tag-nature">功能发布</span>
-          <span class="card-date">原文日期：2026-03-17</span>
-        </div>
-        <a class="card-link" href="https://www.prnewswire.com/news-releases/beautifulai-launches-context-aware-ai-workflow-and-secures-45m-investment-from-general-catalyst-to-accelerate-global-growth-302716249.html" target="_blank">查看原文</a>
-      </div>
-
-      <div class="card" style="border-left-color:#4b5563; opacity:0.72;">
-        <div class="card-top"><span class="card-product">Genspark</span></div>
-        <div class="card-title">Genspark Claw 发布，AI Workspace 3.0 同步推出</div>
-        <div class="card-summary">Genspark 发布首个"AI Employee"产品 Genspark Claw，同步推出 AI Workspace 3.0，新增 Workflows（自动化跨应用任务）、Teams（组织协作）、Meeting Bots（会议自动参与和记录）。公司年化营收超 2 亿美元，B 轮扩展至 3.85 亿美元，估值约 16 亿美元。</div>
-        <div class="card-meta">
-          <span class="tag tag-nature">版本迭代</span>
-          <span class="card-date">原文日期：2026-03-12</span>
-        </div>
-        <a class="card-link" href="https://www.businesswire.com/news/home/20260312641003/en/Genspark-Claw-Launches-as-Gensparks-First-AI-Employee-Alongside-Genspark-AI-Workspace-3.0-as-the-Company-Surpasses-$200M-Annual-Run-Rate-and-Extends-Series-B-to-$385M-and-Reaches-near-$1.6B-Valuation" target="_blank">查看原文</a>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- ======= 底部注释 ======= -->
-  <div class="footer-notes">
-    <div class="footer-line">
-      <span class="highlight">本周无新动态（时间窗口内）：</span>AiPPT &nbsp;·&nbsp; Genspark &nbsp;·&nbsp; 百度文库 &nbsp;·&nbsp; WPS AI &nbsp;·&nbsp; iSlide &nbsp;·&nbsp; Beautiful.ai &nbsp;·&nbsp; Canva
-    </div>
-    <div class="footer-line" style="margin-top:6px;">
-      <span class="highlight">新品监测（本期无更新）</span>
-    </div>
-    <div class="footer-line" style="margin-top:6px;">
-      <span class="highlight">固定监测（共10款）：</span>微软 Office 生态 &nbsp;·&nbsp; AiPPT &nbsp;·&nbsp; Genspark &nbsp;·&nbsp; 百度文库 &nbsp;·&nbsp; WPS AI &nbsp;·&nbsp; iSlide &nbsp;·&nbsp; Gamma &nbsp;·&nbsp; Beautiful.ai &nbsp;·&nbsp; Canva &nbsp;·&nbsp; 天工
-    </div>
-  </div>
-  <div class="footer-bar">
-    OfficePLUS 竞品周报 &nbsp;|&nbsp; 数据截止 2026-03-31 &nbsp;|&nbsp; 由 Claude Code 自动生成
-  </div>
-
-</div><!-- end page-wrapper -->
+</div>
 </body>
 </html>
