@@ -3,315 +3,172 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OfficePLUS 竞品周报 2026-03-31</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #0f1117; color: #e0e6f0; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 14px; line-height: 1.6; }
-  a { color: #4f8ef7; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .page-wrap { max-width: 1400px; margin: 0 auto; padding: 0 24px 48px; }
-
-  /* Header */
-  .header { background: linear-gradient(135deg, #0d1426 0%, #1a2550 100%); padding: 40px 24px 32px; text-align: center; border-bottom: 1px solid #2a3560; }
-  .header h1 { font-size: 2rem; font-weight: 700; color: #ffffff; letter-spacing: 2px; margin-bottom: 8px; }
-  .header .subtitle { color: #8a9cc0; font-size: 0.85rem; margin-bottom: 28px; }
-  .stats-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 12px; }
-  .stat-box { background: rgba(79,142,247,0.08); border: 1px solid rgba(79,142,247,0.2); border-radius: 10px; padding: 14px 24px; min-width: 100px; text-align: center; }
-  .stat-num { font-size: 2rem; font-weight: 700; color: #ffffff; line-height: 1; }
-  .stat-label { font-size: 0.75rem; color: #8a9cc0; margin-top: 4px; }
-  .stat-box.red .stat-num { color: #f06060; }
-  .stat-box.yellow .stat-num { color: #f5c842; }
-  .stat-box.green .stat-num { color: #52c97a; }
-  .header-note { color: #6a7a98; font-size: 0.78rem; margin-top: 6px; }
-
-  /* Section */
-  .section { margin: 36px 0 0; }
-  .section-title { font-size: 1.05rem; font-weight: 700; color: #4f8ef7; letter-spacing: 1px; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #1e2a50; display: flex; align-items: center; gap: 8px; }
-  .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
-  .dot-red { background: #f06060; }
-  .dot-yellow { background: #f5c842; }
-  .dot-green { background: #52c97a; }
-  .section-summary { color: #a0aec0; font-size: 0.85rem; margin-bottom: 18px; line-height: 1.7; }
-
-  /* Cards */
-  .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  @media (max-width: 900px) { .cards-grid { grid-template-columns: 1fr; } }
-  .card { background: #1e2130; border-radius: 10px; padding: 18px 20px; border-left: 4px solid #333; position: relative; }
-  .card.red { border-left-color: #f06060; }
-  .card.yellow { border-left-color: #f5c842; }
-  .card.green { border-left-color: #52c97a; }
-  .card.new { border-left-color: #a78bfa; }
-  .today-badge { position: absolute; top: 14px; right: 16px; font-size: 0.7rem; color: #f5c842; font-weight: 600; letter-spacing: 0.5px; }
-  .card-product { display: inline-block; background: rgba(79,142,247,0.15); color: #7ab3ff; font-size: 0.72rem; font-weight: 600; padding: 2px 10px; border-radius: 20px; margin-bottom: 10px; }
-  .card-title { font-size: 0.95rem; font-weight: 600; color: #d8e4ff; margin-bottom: 8px; line-height: 1.5; }
-  .card-summary { font-size: 0.83rem; color: #9aaac0; line-height: 1.7; margin-bottom: 12px; }
-  .card-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
-  .tag { font-size: 0.7rem; padding: 2px 9px; border-radius: 20px; font-weight: 500; }
-  .tag-event { background: rgba(79,142,247,0.15); color: #7ab3ff; }
-  .tag-red { background: rgba(240,96,96,0.15); color: #f08080; }
-  .tag-yellow { background: rgba(245,200,66,0.15); color: #f5d060; }
-  .tag-green { background: rgba(82,201,122,0.15); color: #70d490; }
-  .tag-new { background: rgba(167,139,250,0.15); color: #c4b5fd; }
-  .card-date { font-size: 0.75rem; color: #6a7a98; margin-bottom: 10px; }
-  .btn-source { display: inline-block; font-size: 0.75rem; color: #4f8ef7; border: 1px solid rgba(79,142,247,0.3); padding: 4px 12px; border-radius: 6px; }
-  .btn-source:hover { background: rgba(79,142,247,0.1); text-decoration: none; }
-
-  /* Overview */
-  .overview-title { font-size: 1.05rem; font-weight: 700; color: #4f8ef7; letter-spacing: 1px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #1e2a50; }
-  .overview-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
-  @media (max-width: 900px) { .overview-grid { grid-template-columns: 1fr; } }
-  .overview-col { border-radius: 10px; padding: 18px 20px; }
-  .ov-red { background: #1a2035; }
-  .ov-yellow { background: #1e2540; }
-  .ov-green { background: #222b45; }
-  .overview-col-title { font-size: 1.1rem; font-weight: bold; color: #ffffff; margin-bottom: 12px; }
-  .overview-col ul { list-style: none; }
-  .overview-col ul li { color: #ffffff; font-size: 0.83rem; line-height: 1.8; padding: 2px 0; }
-  .overview-col ul li::before { content: "— "; color: #ffffff; }
-
-  /* Compare */
-  .compare { background: #161c2e; border: 1px solid #1e2a50; border-radius: 10px; padding: 22px 24px; margin-top: 28px; }
-  .compare-title { font-size: 1rem; font-weight: 700; color: #4f8ef7; margin-bottom: 16px; }
-  .compare-row { margin-bottom: 18px; }
-  .compare-row:last-child { margin-bottom: 0; }
-  .compare-dim { font-size: 0.88rem; font-weight: 700; color: #c0cce8; margin-bottom: 6px; }
-  .compare-line { font-size: 0.82rem; color: #8a9cc0; line-height: 1.8; }
-  .compare-line .lbl { color: #6a7a98; margin-right: 4px; }
-  .compare-line .val { color: #a0b4d0; }
-  .compare-divider { height: 1px; background: #1e2a50; margin: 14px 0; }
-  .nv-title { font-size: 0.85rem; font-weight: 700; color: #a78bfa; margin: 14px 0 6px; }
-  .nv-list { list-style: none; }
-  .nv-list li { font-size: 0.82rem; color: #c4b5fd; padding: 2px 0; }
-  .nv-list li::before { content: "— "; }
-
-  /* Footer */
-  .footer-note { font-size: 0.78rem; color: #4a5878; line-height: 2; margin-top: 36px; }
-  .footer-bar { margin-top: 20px; padding-top: 14px; border-top: 1px solid #1a2240; font-size: 0.75rem; color: #3a4868; text-align: center; }
-</style>
+<title>OfficePLUS 竞品周报 2026-04-07 ~ 2026-04-14</title>
 </head>
-<body>
+<body style="margin:0;padding:0;background-color:#0f1117;font-family:Arial,'Microsoft YaHei',sans-serif;">
+<table width="800" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;">
 
-<div class="header">
-  <div class="page-wrap" style="padding:0;">
-    <h1>OfficePLUS 竞品周报</h1>
-    <div class="subtitle">监测周期：2026-03-24 ~ 2026-03-31 &nbsp;|&nbsp; 生成时间：2026-03-31</div>
-    <div class="stats-grid">
-      <div class="stat-box"><div class="stat-num">4</div><div class="stat-label">固定监测</div></div>
-      <div class="stat-box"><div class="stat-num">8</div><div class="stat-label">本周资讯</div></div>
-      <div class="stat-box red"><div class="stat-num">3</div><div class="stat-label">产品动态</div></div>
-      <div class="stat-box yellow"><div class="stat-num">2</div><div class="stat-label">市场动态</div></div>
-      <div class="stat-box green"><div class="stat-num">2</div><div class="stat-label">行业趋势</div></div>
-      <div class="stat-box"><div class="stat-num">1</div><div class="stat-label">新品监测</div></div>
-    </div>
-    <div class="header-note">固定监测（本期有更新）：Microsoft 365 &nbsp;·&nbsp; AiPPT &nbsp;·&nbsp; Gamma &nbsp;·&nbsp; 天工</div>
-    <div class="header-note">新品监测（本期新增）：MiniMax Office Skills</div>
-  </div>
-</div>
+<!-- Header -->
+<tr><td style="padding:40px 0 10px 0;text-align:center;">
+<table width="800" cellpadding="0" cellspacing="0" border="0"><tr>
+<td style="background-color:#1e2130;border-radius:8px;padding:32px 40px;text-align:center;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-size:28px;font-weight:bold;color:#ffffff;letter-spacing:1px;font-family:Arial,'Microsoft YaHei',sans-serif;">OfficePLUS 竞品周报</td></tr>
+<tr><td style="padding-top:12px;font-size:14px;color:#8a8fa3;font-family:Arial,'Microsoft YaHei',sans-serif;">监测周期：2026-04-07 ~ 2026-04-14 &nbsp;|&nbsp; 生成时间：2026-04-14</td></tr></table>
+</td></tr></table>
+</td></tr>
 
-<div class="page-wrap">
+<!-- Stats Row -->
+<tr><td style="padding:16px 0;">
+<table width="800" cellpadding="0" cellspacing="0" border="0"><tr>
+<td width="25%" style="padding:0 6px 0 0;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-radius:6px;padding:20px;text-align:center;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="font-size:32px;font-weight:bold;color:#4f8ef7;font-family:Arial,'Microsoft YaHei',sans-serif;">3</td></tr>
+<tr><td style="font-size:12px;color:#8a8fa3;padding-top:4px;font-family:Arial,'Microsoft YaHei',sans-serif;">固定监测有更新</td></tr></table>
+</td></tr></table></td>
+<td width="25%" style="padding:0 6px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-radius:6px;padding:20px;text-align:center;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="font-size:32px;font-weight:bold;color:#4f8ef7;font-family:Arial,'Microsoft YaHei',sans-serif;">4</td></tr>
+<tr><td style="font-size:12px;color:#8a8fa3;padding-top:4px;font-family:Arial,'Microsoft YaHei',sans-serif;">本周资讯</td></tr></table>
+</td></tr></table></td>
+<td width="25%" style="padding:0 6px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-radius:6px;padding:20px;text-align:center;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="font-size:32px;font-weight:bold;color:#4f8ef7;font-family:Arial,'Microsoft YaHei',sans-serif;">0</td></tr>
+<tr><td style="font-size:12px;color:#8a8fa3;padding-top:4px;font-family:Arial,'Microsoft YaHei',sans-serif;">新品监测</td></tr></table>
+</td></tr></table></td>
+<td width="25%" style="padding:0 0 0 6px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-radius:6px;padding:20px;text-align:center;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="font-size:14px;color:#e53e3e;font-weight:bold;font-family:Arial,'Microsoft YaHei',sans-serif;">2</td></tr>
+<tr><td style="font-size:14px;color:#d69e2e;font-weight:bold;padding-top:2px;font-family:Arial,'Microsoft YaHei',sans-serif;">1</td></tr>
+<tr><td style="font-size:14px;color:#68a89a;font-weight:bold;padding-top:2px;font-family:Arial,'Microsoft YaHei',sans-serif;">1</td></tr>
+<tr><td style="font-size:10px;color:#8a8fa3;padding-top:4px;font-family:Arial,'Microsoft YaHei',sans-serif;">红 / 黄 / 绿</td></tr></table>
+</td></tr></table></td>
+</tr></table>
+</td></tr>
 
-<!-- 本周速览 -->
-<div class="section">
-  <div class="overview-title">本周速览</div>
-  <div class="overview-grid">
-    <div class="overview-col ov-red">
-      <div class="overview-col-title">产品动态</div>
-      <ul>
-        <li>Microsoft 365 Copilot Cowork 开放 Frontier 早期访问，跨 Office 应用执行多步任务</li>
-        <li>Microsoft 365 宣布4月15日关闭 Word/Excel/PowerPoint 内免费 Copilot Chat</li>
-        <li>AiPPT.com 发布 AiPPT Visual，幻灯片内嵌 Nano Banana 2 AI 图像生成</li>
-      </ul>
-    </div>
-    <div class="overview-col ov-yellow">
-      <div class="overview-col-title">市场动态</div>
-      <ul>
-        <li>Microsoft 365 商业版宣布2026年7月全线调价</li>
-        <li>昆仑万维在中关村论坛发布"3+1" AGI 战略，整合视频、音乐、教育三大创作平台</li>
-      </ul>
-    </div>
-    <div class="overview-col ov-green">
-      <div class="overview-col-title">行业趋势</div>
-      <ul>
-        <li>Gamma 新增30种编程语言语法高亮，演示工具向技术场景持续延伸</li>
-        <li>昆仑万维集中发布 SkyReels V4、Mureka V9、Matrix-Game 3.0 三大模型</li>
-        <li>MiniMax 开源 Office Skills 含 PPTX 生成能力，AI 办公进入开源赛道</li>
-      </ul>
-    </div>
-  </div>
-</div>
+<!-- Quick Overview -->
+<tr><td style="padding:8px 0;">
+<table width="800" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-radius:6px;padding:24px 28px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="font-size:18px;font-weight:bold;color:#ffffff;padding-bottom:16px;font-family:Arial,'Microsoft YaHei',sans-serif;">本周速览</td></tr>
+<tr><td style="font-size:13px;color:#c0c4d6;line-height:22px;font-family:Arial,'Microsoft YaHei',sans-serif;">
+<span style="color:#e53e3e;font-weight:bold;">产品动态</span><br>
+&mdash; Genspark推出AI代理平台，支持零编码部署智能工作流<br>
+&mdash; WPS for Pad正式上线，内置WPS AI 3.0<br><br>
+<span style="color:#d69e2e;font-weight:bold;">市场动态</span><br>
+&mdash; Genspark完成$3.85亿B轮融资，估值$16亿晋升独角兽<br><br>
+<span style="color:#68a89a;font-weight:bold;">行业趋势</span><br>
+&mdash; Copilot Chat扩展PDF摘要与解释能力，AI内嵌文档处理场景持续深化
+</td></tr></table>
+</td></tr></table>
+</td></tr>
 
-<!-- 与上期对比 -->
-<div class="compare">
-  <div class="compare-title">与上期对比</div>
+<!-- Compare with Last Week -->
+<tr><td style="padding:8px 0;">
+<table width="800" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-radius:6px;padding:20px 28px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="font-size:18px;font-weight:bold;color:#ffffff;padding-bottom:10px;font-family:Arial,'Microsoft YaHei',sans-serif;">与上期对比</td></tr>
+<tr><td style="font-size:13px;color:#8a8fa3;font-family:Arial,'Microsoft YaHei',sans-serif;">本期为首期，暂无上期数据</td></tr></table>
+</td></tr></table>
+</td></tr>
 
-  <div class="compare-row">
-    <div class="compare-dim">产品动态</div>
-    <div class="compare-line"><span class="lbl">上期：</span><span class="val">AiPPT 集成 Nano Banana 2；Gamma 推出 Gamma Imagine；Beautiful.ai 上线对话式 AI 工作流</span></div>
-    <div class="compare-line"><span class="lbl">本期：</span><span class="val">Microsoft 365 主导本周，Copilot Cowork 开放并宣布关闭免费 Copilot Chat；AiPPT Visual 正式发布</span></div>
-    <div class="compare-line"><span class="lbl">变化：</span><span class="val">产品动态焦点从国际创业产品转移至 Microsoft 365 平台级动作</span></div>
-  </div>
-  <div class="compare-divider"></div>
+<!-- Section: 产品动态 (Red) -->
+<tr><td style="padding:20px 0 8px 0;">
+<table width="800" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="font-size:20px;font-weight:bold;color:#e53e3e;padding-bottom:6px;font-family:Arial,'Microsoft YaHei',sans-serif;">产品动态</td></tr>
+<tr><td style="font-size:13px;color:#8a8fa3;padding-bottom:16px;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark和WPS分别在代理工作流和iPad端发布新产品。</td></tr>
+</table>
+</td></tr>
 
-  <div class="compare-row">
-    <div class="compare-dim">市场动态</div>
-    <div class="compare-line"><span class="lbl">上期：</span><span class="val">Genspark B 轮融资达 3.85 亿美元；Canva 发布收购后首个 Affinity 重大更新</span></div>
-    <div class="compare-line"><span class="lbl">本期：</span><span class="val">Microsoft 365 宣布7月商业版调价；昆仑万维发布"3+1" AGI 战略</span></div>
-    <div class="compare-line"><span class="lbl">变化：</span><span class="val">融资事件退场，平台定价调整与战略布局成为本周市场主线</span></div>
-  </div>
-  <div class="compare-divider"></div>
+<!-- Red Item 1 -->
+<tr><td style="padding:0 0 12px 0;">
+<table width="800" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-left:4px solid #e53e3e;border-radius:6px;padding:20px 24px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td style="font-size:12px;color:#e53e3e;font-weight:bold;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark</td>
+<td style="font-size:12px;color:#8a8fa3;text-align:right;font-family:Arial,'Microsoft YaHei',sans-serif;">2026-04-12 &nbsp;|&nbsp; 功能发布</td>
+</tr>
+<tr><td colspan="2" style="font-size:15px;font-weight:bold;color:#ffffff;padding:10px 0 8px 0;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark推出AI代理平台面向企业工作流自动化</td></tr>
+<tr><td colspan="2" style="font-size:13px;color:#c0c4d6;line-height:20px;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark推出全新AI代理平台，结合仓储化与低代码理念，支持通过API整合n8n等自动化平台，实现零编码部署客服、销售及数据分析自动化服务。</td></tr>
+<tr><td colspan="2" style="padding-top:10px;"><a href="https://siuleeboss.com/ai-news/genspark-ai-agent-platform-shaping-workflow-2026-04-12/" style="font-size:12px;color:#4f8ef7;text-decoration:none;font-family:Arial,'Microsoft YaHei',sans-serif;">查看原文</a></td></tr>
+</table>
+</td></tr></table>
+</td></tr>
 
-  <div class="compare-row">
-    <div class="compare-dim">行业趋势</div>
-    <div class="compare-line"><span class="lbl">上期：</span><span class="val">Genspark Claw 以 AI 员工形态发布；天工 SkyReels V4 登顶视频生成全球榜</span></div>
-    <div class="compare-line"><span class="lbl">本期：</span><span class="val">Gamma 向技术演示场景延伸；昆仑万维三大模型集中亮相；MiniMax 开源办公文档生成引擎</span></div>
-    <div class="compare-line"><span class="lbl">变化：</span><span class="val">AI 工具能力边界持续向垂直场景（技术演示、多模态创作）扩展</span></div>
-  </div>
-  <div class="compare-divider"></div>
+<!-- Red Item 2 -->
+<tr><td style="padding:0 0 12px 0;">
+<table width="800" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-left:4px solid #e53e3e;border-radius:6px;padding:20px 24px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td style="font-size:12px;color:#e53e3e;font-weight:bold;font-family:Arial,'Microsoft YaHei',sans-serif;">WPS AI</td>
+<td style="font-size:12px;color:#8a8fa3;text-align:right;font-family:Arial,'Microsoft YaHei',sans-serif;">2026-04-08 &nbsp;|&nbsp; 功能发布</td>
+</tr>
+<tr><td colspan="2" style="font-size:15px;font-weight:bold;color:#ffffff;padding:10px 0 8px 0;font-family:Arial,'Microsoft YaHei',sans-serif;">WPS for Pad正式上线成为iPadOS首款原生桌面级办公应用</td></tr>
+<tr><td colspan="2" style="font-size:13px;color:#c0c4d6;line-height:20px;font-family:Arial,'Microsoft YaHei',sans-serif;">金山办公于4月8日正式推出WPS for Pad，作为iPadOS生态首款原生桌面级办公应用，内置WPS AI 3.0和WPS灵犀智能体，支持AI生成PPT、智能总结等功能。上线首日登顶苹果应用商店免费总榜。</td></tr>
+<tr><td colspan="2" style="padding-top:10px;"><a href="https://zqb.cyol.com/pc/content/202604/08/content_424379.html" style="font-size:12px;color:#4f8ef7;text-decoration:none;font-family:Arial,'Microsoft YaHei',sans-serif;">查看原文</a></td></tr>
+</table>
+</td></tr></table>
+</td></tr>
 
-  <div class="nv-title">新变量</div>
-  <ul class="nv-list">
-    <li>MiniMax Office Skills 开源 PPT/文档生成引擎进入公众视野，AI 原生办公工具开源赛道出现新入局者</li>
-  </ul>
-</div>
+<!-- Section: 市场动态 (Yellow) -->
+<tr><td style="padding:20px 0 8px 0;">
+<table width="800" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="font-size:20px;font-weight:bold;color:#d69e2e;padding-bottom:6px;font-family:Arial,'Microsoft YaHei',sans-serif;">市场动态</td></tr>
+<tr><td style="font-size:13px;color:#8a8fa3;padding-bottom:16px;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark B轮融资完成，AI演示工具赛道独角兽诞生。</td></tr>
+</table>
+</td></tr>
 
-<!-- 产品动态 -->
-<div class="section">
-  <div class="section-title"><span class="dot dot-red"></span>产品动态</div>
-  <div class="section-summary">Microsoft 365 本周连续发布 Copilot Cowork 并宣布关闭免费 Copilot Chat；AiPPT 推出幻灯片内嵌 AI 图像生成功能 AiPPT Visual。</div>
-  <div class="cards-grid">
+<!-- Yellow Item 1 -->
+<tr><td style="padding:0 0 12px 0;">
+<table width="800" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-left:4px solid #d69e2e;border-radius:6px;padding:20px 24px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td style="font-size:12px;color:#d69e2e;font-weight:bold;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark</td>
+<td style="font-size:12px;color:#8a8fa3;text-align:right;font-family:Arial,'Microsoft YaHei',sans-serif;">2026-04-09 &nbsp;|&nbsp; 融资事件</td>
+</tr>
+<tr><td colspan="2" style="font-size:15px;font-weight:bold;color:#ffffff;padding:10px 0 8px 0;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark完成3.85亿美元B轮融资估值达16亿美元</td></tr>
+<tr><td colspan="2" style="font-size:13px;color:#c0c4d6;line-height:20px;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark于4月9日宣布完成3.85亿美元Series B融资，估值达16亿美元，成为独角兽。公司计划将资金用于AI代理平台的扩展，面向中小企业提供低代码智能工作流解决方案。</td></tr>
+<tr><td colspan="2" style="padding-top:10px;"><a href="https://www.bizjournals.com/sanjose/news/2026/04/09/genspark-wen-sang-founder-ai-unicorn.html" style="font-size:12px;color:#4f8ef7;text-decoration:none;font-family:Arial,'Microsoft YaHei',sans-serif;">查看原文</a></td></tr>
+</table>
+</td></tr></table>
+</td></tr>
 
-    <div class="card red">
-      <span class="today-badge">今日更新</span>
-      <div class="card-product">Microsoft 365</div>
-      <div class="card-title">Copilot Cowork 通过 Frontier 项目向早期用户开放</div>
-      <div class="card-summary">微软推出 Copilot Cowork，支持跨 Outlook、Teams、Excel 等 Microsoft 365 应用执行复杂多步任务，由 Anthropic Claude 模型提供支持。用户描述目标后 AI 自动制定计划并推进工作，过程可见且可随时介入，当前通过 Frontier 项目面向早期用户限量开放。</div>
-      <div class="card-meta">
-        <span class="tag tag-event">功能发布</span>
-        <span class="tag tag-red">产品动态</span>
-      </div>
-      <div class="card-date">原文日期：2026-03-30</div>
-      <a class="btn-source" href="https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/" target="_blank">查看原文</a>
-    </div>
+<!-- Section: 行业趋势 (Green) -->
+<tr><td style="padding:20px 0 8px 0;">
+<table width="800" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="font-size:20px;font-weight:bold;color:#68a89a;padding-bottom:6px;font-family:Arial,'Microsoft YaHei',sans-serif;">行业趋势</td></tr>
+<tr><td style="font-size:13px;color:#8a8fa3;padding-bottom:16px;font-family:Arial,'Microsoft YaHei',sans-serif;">Copilot持续扩展AI内嵌文档处理能力。</td></tr>
+</table>
+</td></tr>
 
-    <div class="card red">
-      <div class="card-product">Microsoft 365</div>
-      <div class="card-title">4月15日起 Word/Excel/PowerPoint 内免费 Copilot Chat 下线</div>
-      <div class="card-summary">微软将于2026年4月15日对 Word、Excel、PowerPoint、OneNote 数百万 Microsoft 365 商业用户关闭免费 Copilot Chat 功能，受影响用户需升级至付费订阅方可继续使用 Office 应用内嵌 AI 对话功能。</div>
-      <div class="card-meta">
-        <span class="tag tag-event">版本迭代</span>
-        <span class="tag tag-red">产品动态</span>
-      </div>
-      <div class="card-date">原文日期：2026-03-24</div>
-      <a class="btn-source" href="https://office-watch.com/2026/microsoft-removes-copilot-chat-word-excel-powerpoint-april-2026/" target="_blank">查看原文</a>
-    </div>
-
-    <div class="card red">
-      <div class="card-product">AiPPT</div>
-      <div class="card-title">AiPPT.com 推出 AiPPT Visual，集成 Nano Banana 2 图像模型</div>
-      <div class="card-summary">AiPPT.com 升级 AI 图像生成器至 Nano Banana 2 模型，推出 AiPPT Visual 功能。用户可在演示编辑器内将提示词或上传文档直接生成图像风格幻灯片，无需切换外部工具，支持处理研究报告等复杂长文档场景。</div>
-      <div class="card-meta">
-        <span class="tag tag-event">功能发布</span>
-        <span class="tag tag-red">产品动态</span>
-      </div>
-      <div class="card-date">原文日期：2026-03-23</div>
-      <a class="btn-source" href="https://www.prnewswire.com/news-releases/aipptcom-enhances-its-ai-image-generator-with-nano-banana-2-to-support-smarter-slide-302721895.html" target="_blank">查看原文</a>
-    </div>
-
-  </div>
-</div>
-
-<!-- 市场动态 -->
-<div class="section">
-  <div class="section-title"><span class="dot dot-yellow"></span>市场动态</div>
-  <div class="section-summary">Microsoft 365 宣布7月商业版调价；昆仑万维在中关村论坛发布"3+1" AGI 战略，整合旗下多条 AI 原生产品线。</div>
-  <div class="cards-grid">
-
-    <div class="card yellow">
-      <div class="card-product">Microsoft 365</div>
-      <div class="card-title">2026年7月起商业版 Microsoft 365 全线调价</div>
-      <div class="card-summary">微软宣布2026年7月1日起全球商业版 Microsoft 365 套件调价：Business Basic 从 $6 涨至 $7，Business Standard 从 $12.5 涨至 $14，E3/E5 企业版同步上调，并同步新增安全功能捆绑套餐选项。</div>
-      <div class="card-meta">
-        <span class="tag tag-event">市场动态</span>
-        <span class="tag tag-yellow">市场动态</span>
-      </div>
-      <div class="card-date">原文日期：2026-03-24</div>
-      <a class="btn-source" href="https://windowsforum.com/threads/microsoft-365-pricing-packaging-update-2026-july-price-rise-new-security-bundles.407267/" target="_blank">查看原文</a>
-    </div>
-
-    <div class="card yellow">
-      <div class="card-product">天工</div>
-      <div class="card-title">昆仑万维发布"3+1" AGI 战略生态架构</div>
-      <div class="card-summary">昆仑万维在2026中关村论坛发布"3+1" AGI 战略：以4个 SOTA 大模型为底座，支撑 DramaWave（视频）、Mureka（音乐）、猫森学园（教育）三大 AI 原生平台，加1个超级智能体，构建跨内容类型的创作闭环生态。</div>
-      <div class="card-meta">
-        <span class="tag tag-event">战略合作</span>
-        <span class="tag tag-yellow">市场动态</span>
-      </div>
-      <div class="card-date">原文日期：2026-03-28</div>
-      <a class="btn-source" href="https://finance.sina.com.cn/roll/2026-03-28/doc-inhspfma5966159.shtml" target="_blank">查看原文</a>
-    </div>
-
-  </div>
-</div>
-
-<!-- 行业趋势 -->
-<div class="section">
-  <div class="section-title"><span class="dot dot-green"></span>行业趋势</div>
-  <div class="section-summary">Gamma 向技术演示场景持续延伸；昆仑万维三大模型集中亮相，多模态内容生成能力持续升级。</div>
-  <div class="cards-grid">
-
-    <div class="card green">
-      <div class="card-product">Gamma</div>
-      <div class="card-title">Gamma 代码块新增30种编程语言语法高亮</div>
-      <div class="card-summary">Gamma 更新代码块功能，新增支持30种编程语言的语法高亮，适配亮色与暗色两种主题，进一步扩展技术类演示文稿的展示场景，向开发者和技术用户群体延伸。</div>
-      <div class="card-meta">
-        <span class="tag tag-event">版本迭代</span>
-        <span class="tag tag-green">行业趋势</span>
-      </div>
-      <div class="card-date">原文日期：2026-03-25</div>
-      <a class="btn-source" href="https://meetgamma.canny.io/changelog" target="_blank">查看原文</a>
-    </div>
-
-    <div class="card green">
-      <div class="card-product">天工</div>
-      <div class="card-title">昆仑万维发布 SkyReels V4、Mureka V9、Matrix-Game 3.0 三大模型</div>
-      <div class="card-summary">昆仑万维于2026中关村论坛集中发布三大模型：SkyReels V4 在 Text-to-Video With Audio 全球排名第一并开放 API；Mureka V9 提升音乐段落级文本控制与混音质量；Matrix-Game 3.0 支持720P/40FPS 游戏世界生成。</div>
-      <div class="card-meta">
-        <span class="tag tag-event">功能发布</span>
-        <span class="tag tag-green">行业趋势</span>
-      </div>
-      <div class="card-date">原文日期：2026-03-28</div>
-      <a class="btn-source" href="https://www.chinanews.com.cn/cj/2026/03-28/10594432.shtml" target="_blank">查看原文</a>
-    </div>
-
-  </div>
-</div>
-
-<!-- 新品监测 -->
-<div class="section">
-  <div class="section-title" style="color:#a78bfa; border-bottom-color:#2a2050;">新品监测</div>
-  <div style="font-size:0.82rem; color:#7a6ab0; font-weight:600; letter-spacing:0.5px; margin-bottom:12px;">演示 / PPT</div>
-  <div class="cards-grid">
-    <div class="card new">
-      <div class="card-product" style="background:rgba(167,139,250,0.12); color:#c4b5fd;">MiniMax Office Skills</div>
-      <div class="card-title">MiniMax 开源生产级办公文档引擎，含 PPTX 生成能力</div>
-      <div class="card-summary">MiniMax（稀宇科技）正式开源 Office Skills 工具包（MIT 协议），覆盖 Word（docx）、Excel（xlsx）、PDF、PPT（pptx）四种格式的文档生成与编辑能力。其中 PPTX Generator 基于 python-pptx 构建，定位"可交付级"输出，无需人工二次整理，是继编程类 Skills 库后 MiniMax 在 AI 办公领域的首个开源动作。</div>
-      <div class="card-meta">
-        <span class="tag tag-event">开源项目</span>
-        <span class="tag tag-new">新品监测</span>
-      </div>
-      <div class="card-date">原文日期：2026-03-25</div>
-      <a class="btn-source" href="https://github.com/MiniMax-AI/skills" target="_blank">查看原文</a>
-    </div>
-  </div>
-</div>
+<!-- Green Item 1 -->
+<tr><td style="padding:0 0 12px 0;">
+<table width="800" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-left:4px solid #68a89a;border-radius:6px;padding:20px 24px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td style="font-size:12px;color:#68a89a;font-weight:bold;font-family:Arial,'Microsoft YaHei',sans-serif;">Microsoft 365</td>
+<td style="font-size:12px;color:#8a8fa3;text-align:right;font-family:Arial,'Microsoft YaHei',sans-serif;">2026-03-24 &nbsp;|&nbsp; 功能发布</td>
+</tr>
+<tr><td colspan="2" style="font-size:15px;font-weight:bold;color:#ffffff;padding:10px 0 8px 0;font-family:Arial,'Microsoft YaHei',sans-serif;">Copilot Chat新增PDF摘要与解释功能</td></tr>
+<tr><td colspan="2" style="font-size:13px;color:#c0c4d6;line-height:20px;font-family:Arial,'Microsoft YaHei',sans-serif;">Microsoft 365 Copilot Chat在Edge PDF阅读器中新增Summarize和Explain两项操作，用户可直接在PDF中生成摘要或简化复杂文本内容。</td></tr>
+<tr><td colspan="2" style="padding-top:10px;"><a href="https://releasebot.io/updates/microsoft/microsoft-copilot" style="font-size:12px;color:#4f8ef7;text-decoration:none;font-family:Arial,'Microsoft YaHei',sans-serif;">查看原文</a></td></tr>
+</table>
+</td></tr></table>
+</td></tr>
 
 <!-- Footer -->
-<div class="footer-note">
-  本周无新动态：Genspark &nbsp;·&nbsp; 百度文库 &nbsp;·&nbsp; WPS AI &nbsp;·&nbsp; iSlide &nbsp;·&nbsp; Beautiful.ai &nbsp;·&nbsp; Canva<br>
-  固定监测（共10款）：微软 Office 生态 &nbsp;·&nbsp; AiPPT &nbsp;·&nbsp; Genspark &nbsp;·&nbsp; 百度文库 &nbsp;·&nbsp; WPS AI &nbsp;·&nbsp; iSlide &nbsp;·&nbsp; Gamma &nbsp;·&nbsp; Beautiful.ai &nbsp;·&nbsp; Canva &nbsp;·&nbsp; 天工
-</div>
-<div class="footer-bar">OfficePLUS 竞品周报 &nbsp;|&nbsp; 数据截止 2026-03-31 &nbsp;|&nbsp; 由 Claude Code 自动生成</div>
+<tr><td style="padding:30px 0 16px 0;">
+<table width="800" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid #2a2d3e;padding-top:20px;text-align:center;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="font-size:11px;color:#5a5e73;line-height:18px;font-family:Arial,'Microsoft YaHei',sans-serif;">本周无新动态：AiPPT · 百度文库 · iSlide · Gamma · Beautiful.ai · Canva · 天工</td></tr>
+<tr><td style="font-size:11px;color:#5a5e73;line-height:18px;padding-top:6px;font-family:Arial,'Microsoft YaHei',sans-serif;">固定监测（共10款）：微软 Office 生态 · AiPPT · Genspark · 百度文库 · WPS AI · iSlide · Gamma · Beautiful.ai · Canva · 天工</td></tr>
+</table>
+</td></tr></table>
+</td></tr>
 
-</div>
+</table>
 </body>
 </html>
