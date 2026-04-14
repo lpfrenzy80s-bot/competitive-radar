@@ -3,182 +3,256 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OfficePLUS 竞品周报 2026-04-07 ~ 2026-04-14</title>
+<title>OfficePLUS 竞品周报</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0f1117; color: #e0e6f0; font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; font-size: 14px; line-height: 1.6; }
+a { color: #4f8ef7; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.page-wrap { max-width: 1400px; margin: 0 auto; padding: 0 24px 48px; }
+.header { background: linear-gradient(135deg, #0d1426 0%, #1a2550 100%); padding: 40px 24px 32px; text-align: center; border-bottom: 1px solid #2a3560; }
+.header h1 { font-size: 2rem; font-weight: 700; color: #ffffff; letter-spacing: 2px; margin-bottom: 8px; }
+.header .subtitle { color: #8a9cc0; font-size: 0.85rem; margin-bottom: 28px; }
+.stats-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 12px; }
+.stat-box { background: rgba(79,142,247,0.08); border: 1px solid rgba(79,142,247,0.2); border-radius: 10px; padding: 14px 24px; min-width: 100px; text-align: center; }
+.stat-num { font-size: 2rem; font-weight: 700; color: #ffffff; line-height: 1; }
+.stat-label { font-size: 0.75rem; color: #8a9cc0; margin-top: 4px; }
+.stat-box.red .stat-num { color: #f06060; }
+.stat-box.yellow .stat-num { color: #f5c842; }
+.stat-box.green .stat-num { color: #52c97a; }
+.header-note { color: #6a7a98; font-size: 0.78rem; margin-top: 6px; }
+.section { margin: 36px 0 0; }
+.section-title { font-size: 1.05rem; font-weight: 700; color: #4f8ef7; letter-spacing: 1px; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #1e2a50; display: flex; align-items: center; gap: 8px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.dot-red { background: #f06060; }
+.dot-yellow { background: #f5c842; }
+.dot-green { background: #52c97a; }
+.section-summary { color: #a0aec0; font-size: 0.85rem; margin-bottom: 18px; line-height: 1.7; }
+.cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 900px) { .cards-grid { grid-template-columns: 1fr; } }
+.card { background: #1e2130; border-radius: 10px; padding: 18px 20px; border-left: 4px solid #333; position: relative; }
+.card.red { border-left-color: #f06060; }
+.card.yellow { border-left-color: #f5c842; }
+.card.green { border-left-color: #52c97a; }
+.card.new { border-left-color: #a78bfa; }
+.today-badge { position: absolute; top: 14px; right: 16px; font-size: 0.7rem; color: #f5c842; font-weight: 600; letter-spacing: 0.5px; }
+.card-product { display: inline-block; background: rgba(79,142,247,0.15); color: #7ab3ff; font-size: 0.72rem; font-weight: 600; padding: 2px 10px; border-radius: 20px; margin-bottom: 10px; }
+.card-title { font-size: 0.95rem; font-weight: 600; color: #d8e4ff; margin-bottom: 8px; line-height: 1.5; }
+.card-summary { font-size: 0.83rem; color: #9aaac0; line-height: 1.7; margin-bottom: 12px; }
+.card-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.tag { font-size: 0.7rem; padding: 2px 9px; border-radius: 20px; font-weight: 500; }
+.tag-event { background: rgba(79,142,247,0.15); color: #7ab3ff; }
+.tag-red { background: rgba(240,96,96,0.15); color: #f08080; }
+.tag-yellow { background: rgba(245,200,66,0.15); color: #f5d060; }
+.tag-green { background: rgba(82,201,122,0.15); color: #70d490; }
+.tag-new { background: rgba(167,139,250,0.15); color: #c4b5fd; }
+.card-date { font-size: 0.75rem; color: #6a7a98; margin-bottom: 10px; }
+.btn-source { display: inline-block; font-size: 0.75rem; color: #4f8ef7; border: 1px solid rgba(79,142,247,0.3); padding: 4px 12px; border-radius: 6px; }
+.btn-source:hover { background: rgba(79,142,247,0.1); text-decoration: none; }
+.overview-title { font-size: 1.05rem; font-weight: 700; color: #4f8ef7; letter-spacing: 1px; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid #1e2a50; }
+.overview-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+@media (max-width: 900px) { .overview-grid { grid-template-columns: 1fr; } }
+.overview-col { border-radius: 10px; padding: 18px 20px; }
+.ov-red { background: #1a2035; }
+.ov-yellow { background: #1e2540; }
+.ov-green { background: #222b45; }
+.overview-col-title { font-size: 1.1rem; font-weight: bold; color: #ffffff; margin-bottom: 12px; }
+.overview-col ul { list-style: none; }
+.overview-col ul li { color: #ffffff; font-size: 0.83rem; line-height: 1.8; padding: 2px 0; }
+.overview-col ul li::before { content: "— "; color: #ffffff; }
+.compare { background: #161c2e; border: 1px solid #1e2a50; border-radius: 10px; padding: 22px 24px; margin-top: 28px; }
+.compare-title { font-size: 1rem; font-weight: 700; color: #4f8ef7; margin-bottom: 16px; }
+.compare-row { margin-bottom: 18px; }
+.compare-row:last-child { margin-bottom: 0; }
+.compare-dim { font-size: 0.88rem; font-weight: 700; color: #c0cce8; margin-bottom: 6px; }
+.compare-line { font-size: 0.82rem; color: #8a9cc0; line-height: 1.8; }
+.compare-line .lbl { color: #6a7a98; margin-right: 4px; }
+.compare-line .val { color: #a0b4d0; }
+.compare-divider { height: 1px; background: #1e2a50; margin: 14px 0; }
+.nv-title { font-size: 0.85rem; font-weight: 700; color: #a78bfa; margin: 14px 0 6px; }
+.nv-list { list-style: none; }
+.nv-list li { font-size: 0.82rem; color: #c4b5fd; padding: 2px 0; }
+.nv-list li::before { content: "— "; }
+.footer-note { font-size: 0.78rem; color: #4a5878; line-height: 2; margin-top: 36px; }
+.footer-bar { margin-top: 20px; padding-top: 14px; border-top: 1px solid #1a2240; font-size: 0.75rem; color: #3a4868; text-align: center; }
+</style>
 </head>
-<body style="margin:0;padding:0;background-color:#0f1117;font-family:Arial,'Microsoft YaHei',sans-serif;">
-<table width="800" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;">
+<body>
 
-<!-- Header -->
-<tr><td style="padding:40px 0 10px 0;text-align:center;">
-<table width="800" cellpadding="0" cellspacing="0" border="0"><tr>
-<td style="background-color:#1e2130;border-radius:8px;padding:32px 40px;text-align:center;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="font-size:28px;font-weight:bold;color:#ffffff;letter-spacing:1px;font-family:Arial,'Microsoft YaHei',sans-serif;">OfficePLUS 竞品周报</td></tr>
-<tr><td style="padding-top:12px;font-size:14px;color:#8a8fa3;font-family:Arial,'Microsoft YaHei',sans-serif;">监测周期：2026-04-07 ~ 2026-04-14 &nbsp;|&nbsp; 生成时间：2026-04-14</td></tr></table>
-</td></tr></table>
-</td></tr>
+<div class="header">
+  <h1>OfficePLUS 竞品周报</h1>
+  <div class="subtitle">监测周期：2026-04-07 ~ 2026-04-14 ｜ 生成时间：2026-04-14</div>
+  <div class="stats-grid">
+    <div class="stat-box">
+      <div class="stat-num">3</div>
+      <div class="stat-label">固定监测</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">4</div>
+      <div class="stat-label">本周资讯</div>
+    </div>
+    <div class="stat-box red">
+      <div class="stat-num">2</div>
+      <div class="stat-label">产品动态</div>
+    </div>
+    <div class="stat-box yellow">
+      <div class="stat-num">1</div>
+      <div class="stat-label">市场动态</div>
+    </div>
+    <div class="stat-box green">
+      <div class="stat-num">1</div>
+      <div class="stat-label">行业趋势</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">0</div>
+      <div class="stat-label">新品监测</div>
+    </div>
+  </div>
+  <div class="header-note">固定监测（本期有更新）：Microsoft 365 · Genspark · WPS AI</div>
+</div>
 
-<!-- Stats Row -->
-<tr><td style="padding:16px 0;">
-<table width="800" cellpadding="0" cellspacing="4" border="0"><tr>
-<td width="13%" valign="top">
-<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1a2035;border-radius:6px;padding:12px;text-align:center;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="font-size:28px;font-weight:bold;color:#ffffff;font-family:Arial,'Microsoft YaHei',sans-serif;">3</td></tr>
-<tr><td style="font-size:12px;color:#8892a4;padding-top:4px;font-family:Arial,'Microsoft YaHei',sans-serif;">固定监测</td></tr></table>
-</td></tr></table></td>
-<td width="13%" valign="top">
-<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1a2035;border-radius:6px;padding:12px;text-align:center;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="font-size:28px;font-weight:bold;color:#ffffff;font-family:Arial,'Microsoft YaHei',sans-serif;">4</td></tr>
-<tr><td style="font-size:12px;color:#8892a4;padding-top:4px;font-family:Arial,'Microsoft YaHei',sans-serif;">本周资讯</td></tr></table>
-</td></tr></table></td>
-<td width="13%" valign="top">
-<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1a2035;border-radius:6px;padding:12px;text-align:center;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="font-size:28px;font-weight:bold;color:#e53e3e;font-family:Arial,'Microsoft YaHei',sans-serif;">2</td></tr>
-<tr><td style="font-size:12px;color:#8892a4;padding-top:4px;font-family:Arial,'Microsoft YaHei',sans-serif;">产品动态</td></tr></table>
-</td></tr></table></td>
-<td width="13%" valign="top">
-<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1a2035;border-radius:6px;padding:12px;text-align:center;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="font-size:28px;font-weight:bold;color:#d69e2e;font-family:Arial,'Microsoft YaHei',sans-serif;">1</td></tr>
-<tr><td style="font-size:12px;color:#8892a4;padding-top:4px;font-family:Arial,'Microsoft YaHei',sans-serif;">市场动态</td></tr></table>
-</td></tr></table></td>
-<td width="13%" valign="top">
-<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1a2035;border-radius:6px;padding:12px;text-align:center;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="font-size:28px;font-weight:bold;color:#68a89a;font-family:Arial,'Microsoft YaHei',sans-serif;">1</td></tr>
-<tr><td style="font-size:12px;color:#8892a4;padding-top:4px;font-family:Arial,'Microsoft YaHei',sans-serif;">行业趋势</td></tr></table>
-</td></tr></table></td>
-<td width="13%" valign="top">
-<table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1a2035;border-radius:6px;padding:12px;text-align:center;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="font-size:28px;font-weight:bold;color:#ffffff;font-family:Arial,'Microsoft YaHei',sans-serif;">0</td></tr>
-<tr><td style="font-size:12px;color:#8892a4;padding-top:4px;font-family:Arial,'Microsoft YaHei',sans-serif;">新品监测</td></tr></table>
-</td></tr></table></td>
-</tr></table>
-</td></tr>
+<div class="page-wrap">
 
-<!-- Quick Overview -->
-<tr><td style="padding:8px 0;">
-<table width="800" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-radius:6px;padding:24px 28px;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="font-size:18px;font-weight:bold;color:#ffffff;padding-bottom:16px;font-family:Arial,'Microsoft YaHei',sans-serif;">本周速览</td></tr>
-<tr><td style="font-size:13px;color:#c0c4d6;line-height:22px;font-family:Arial,'Microsoft YaHei',sans-serif;">
-<span style="color:#e53e3e;font-weight:bold;">产品动态</span><br>
-&mdash; Genspark推出AI代理平台，支持零编码部署智能工作流<br>
-&mdash; WPS for Pad正式上线，内置WPS AI 3.0<br><br>
-<span style="color:#d69e2e;font-weight:bold;">市场动态</span><br>
-&mdash; Genspark完成$3.85亿B轮融资，估值$16亿晋升独角兽<br><br>
-<span style="color:#68a89a;font-weight:bold;">行业趋势</span><br>
-&mdash; Copilot Chat扩展PDF摘要与解释能力，AI内嵌文档处理场景持续深化
-</td></tr></table>
-</td></tr></table>
-</td></tr>
+  <!-- 本周速览 -->
+  <div class="section">
+    <div class="overview-title">📋 本周速览</div>
+    <div class="overview-grid">
+      <div class="overview-col ov-red">
+        <div class="overview-col-title">🔴 产品动态</div>
+        <ul>
+          <li>Genspark推出AI代理平台，支持零编码部署智能工作流</li>
+          <li>WPS for Pad正式上线，内置WPS AI 3.0</li>
+        </ul>
+      </div>
+      <div class="overview-col ov-yellow">
+        <div class="overview-col-title">🟡 市场动态</div>
+        <ul>
+          <li>Genspark完成$3.85亿B轮融资，估值$16亿晋升独角兽</li>
+        </ul>
+      </div>
+      <div class="overview-col ov-green">
+        <div class="overview-col-title">🟢 行业趋势</div>
+        <ul>
+          <li>Copilot Chat扩展PDF摘要与解释能力，AI内嵌文档处理场景持续深化</li>
+        </ul>
+      </div>
+    </div>
 
-<!-- Compare with Last Week -->
-<tr><td style="padding:8px 0;">
-<table width="800" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-radius:6px;padding:20px 28px;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="font-size:18px;font-weight:bold;color:#ffffff;padding-bottom:10px;font-family:Arial,'Microsoft YaHei',sans-serif;">与上期对比</td></tr>
-<tr><td style="font-size:13px;color:#8a8fa3;font-family:Arial,'Microsoft YaHei',sans-serif;">本期为首期，暂无上期数据</td></tr></table>
-</td></tr></table>
-</td></tr>
+    <!-- 与上期对比 -->
+    <div class="compare">
+      <div class="compare-title">📊 与上期对比</div>
 
-<!-- Section: 产品动态 (Red) -->
-<tr><td style="padding:20px 0 8px 0;">
-<table width="800" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="font-size:20px;font-weight:bold;color:#e53e3e;padding-bottom:6px;font-family:Arial,'Microsoft YaHei',sans-serif;">产品动态</td></tr>
-<tr><td style="font-size:13px;color:#8a8fa3;padding-bottom:16px;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark和WPS分别在代理工作流和iPad端发布新产品。</td></tr>
-</table>
-</td></tr>
+      <div class="compare-row">
+        <div class="compare-dim">产品动态</div>
+        <div class="compare-line"><span class="lbl">上期：</span><span class="val">Microsoft 365 Copilot Cowork 开放；AiPPT 推出 AiPPT Visual</span></div>
+        <div class="compare-line"><span class="lbl">本期：</span><span class="val">Genspark推出AI代理平台；WPS for Pad登陆iPadOS</span></div>
+        <div class="compare-line"><span class="lbl">变化：</span><span class="val">产品动态焦点从Microsoft生态转向Genspark代理平台和WPS移动端</span></div>
+      </div>
 
-<!-- Red Item 1 -->
-<tr><td style="padding:0 0 12px 0;">
-<table width="800" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-left:4px solid #e53e3e;border-radius:6px;padding:20px 24px;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td style="font-size:12px;color:#e53e3e;font-weight:bold;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark</td>
-<td style="font-size:12px;color:#8a8fa3;text-align:right;font-family:Arial,'Microsoft YaHei',sans-serif;">2026-04-12 &nbsp;|&nbsp; 功能发布</td>
-</tr>
-<tr><td colspan="2" style="font-size:15px;font-weight:bold;color:#ffffff;padding:10px 0 8px 0;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark推出AI代理平台面向企业工作流自动化</td></tr>
-<tr><td colspan="2" style="font-size:13px;color:#c0c4d6;line-height:20px;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark推出全新AI代理平台，结合仓储化与低代码理念，支持通过API整合n8n等自动化平台，实现零编码部署客服、销售及数据分析自动化服务。</td></tr>
-<tr><td colspan="2" style="padding-top:10px;"><a href="https://siuleeboss.com/ai-news/genspark-ai-agent-platform-shaping-workflow-2026-04-12/" style="font-size:12px;color:#4f8ef7;text-decoration:none;font-family:Arial,'Microsoft YaHei',sans-serif;">查看原文</a></td></tr>
-</table>
-</td></tr></table>
-</td></tr>
+      <div class="compare-divider"></div>
 
-<!-- Red Item 2 -->
-<tr><td style="padding:0 0 12px 0;">
-<table width="800" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-left:4px solid #e53e3e;border-radius:6px;padding:20px 24px;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td style="font-size:12px;color:#e53e3e;font-weight:bold;font-family:Arial,'Microsoft YaHei',sans-serif;">WPS AI</td>
-<td style="font-size:12px;color:#8a8fa3;text-align:right;font-family:Arial,'Microsoft YaHei',sans-serif;">2026-04-08 &nbsp;|&nbsp; 功能发布</td>
-</tr>
-<tr><td colspan="2" style="font-size:15px;font-weight:bold;color:#ffffff;padding:10px 0 8px 0;font-family:Arial,'Microsoft YaHei',sans-serif;">WPS for Pad正式上线成为iPadOS首款原生桌面级办公应用</td></tr>
-<tr><td colspan="2" style="font-size:13px;color:#c0c4d6;line-height:20px;font-family:Arial,'Microsoft YaHei',sans-serif;">金山办公于4月8日正式推出WPS for Pad，作为iPadOS生态首款原生桌面级办公应用，内置WPS AI 3.0和WPS灵犀智能体，支持AI生成PPT、智能总结等功能。上线首日登顶苹果应用商店免费总榜。</td></tr>
-<tr><td colspan="2" style="padding-top:10px;"><a href="https://zqb.cyol.com/pc/content/202604/08/content_424379.html" style="font-size:12px;color:#4f8ef7;text-decoration:none;font-family:Arial,'Microsoft YaHei',sans-serif;">查看原文</a></td></tr>
-</table>
-</td></tr></table>
-</td></tr>
+      <div class="compare-row">
+        <div class="compare-dim">市场动态</div>
+        <div class="compare-line"><span class="lbl">上期：</span><span class="val">Microsoft 365商业版宣布7月调价；昆仑万维发布AGI战略</span></div>
+        <div class="compare-line"><span class="lbl">本期：</span><span class="val">Genspark完成$3.85亿B轮融资晋升独角兽</span></div>
+        <div class="compare-line"><span class="lbl">变化：</span><span class="val">AI演示工具赛道迎来大额融资，市场格局加速分化</span></div>
+      </div>
 
-<!-- Section: 市场动态 (Yellow) -->
-<tr><td style="padding:20px 0 8px 0;">
-<table width="800" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="font-size:20px;font-weight:bold;color:#d69e2e;padding-bottom:6px;font-family:Arial,'Microsoft YaHei',sans-serif;">市场动态</td></tr>
-<tr><td style="font-size:13px;color:#8a8fa3;padding-bottom:16px;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark B轮融资完成，AI演示工具赛道独角兽诞生。</td></tr>
-</table>
-</td></tr>
+      <div class="compare-divider"></div>
 
-<!-- Yellow Item 1 -->
-<tr><td style="padding:0 0 12px 0;">
-<table width="800" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-left:4px solid #d69e2e;border-radius:6px;padding:20px 24px;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td style="font-size:12px;color:#d69e2e;font-weight:bold;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark</td>
-<td style="font-size:12px;color:#8a8fa3;text-align:right;font-family:Arial,'Microsoft YaHei',sans-serif;">2026-04-09 &nbsp;|&nbsp; 融资事件</td>
-</tr>
-<tr><td colspan="2" style="font-size:15px;font-weight:bold;color:#ffffff;padding:10px 0 8px 0;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark完成3.85亿美元B轮融资估值达16亿美元</td></tr>
-<tr><td colspan="2" style="font-size:13px;color:#c0c4d6;line-height:20px;font-family:Arial,'Microsoft YaHei',sans-serif;">Genspark于4月9日宣布完成3.85亿美元Series B融资，估值达16亿美元，成为独角兽。公司计划将资金用于AI代理平台的扩展，面向中小企业提供低代码智能工作流解决方案。</td></tr>
-<tr><td colspan="2" style="padding-top:10px;"><a href="https://www.bizjournals.com/sanjose/news/2026/04/09/genspark-wen-sang-founder-ai-unicorn.html" style="font-size:12px;color:#4f8ef7;text-decoration:none;font-family:Arial,'Microsoft YaHei',sans-serif;">查看原文</a></td></tr>
-</table>
-</td></tr></table>
-</td></tr>
+      <div class="compare-row">
+        <div class="compare-dim">行业趋势</div>
+        <div class="compare-line"><span class="lbl">上期：</span><span class="val">Gamma向技术演示延伸；MiniMax开源办公文档引擎</span></div>
+        <div class="compare-line"><span class="lbl">本期：</span><span class="val">Copilot Chat持续扩展文档内AI处理能力</span></div>
+        <div class="compare-line"><span class="lbl">变化：</span><span class="val">AI能力从独立工具向内嵌文档处理场景持续渗透</span></div>
+      </div>
+    </div>
+  </div>
 
-<!-- Section: 行业趋势 (Green) -->
-<tr><td style="padding:20px 0 8px 0;">
-<table width="800" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="font-size:20px;font-weight:bold;color:#68a89a;padding-bottom:6px;font-family:Arial,'Microsoft YaHei',sans-serif;">行业趋势</td></tr>
-<tr><td style="font-size:13px;color:#8a8fa3;padding-bottom:16px;font-family:Arial,'Microsoft YaHei',sans-serif;">Copilot持续扩展AI内嵌文档处理能力。</td></tr>
-</table>
-</td></tr>
+  <!-- 产品动态 -->
+  <div class="section">
+    <div class="section-title"><span class="dot dot-red"></span> 产品动态</div>
+    <div class="section-summary">Genspark和WPS分别在代理工作流和iPad端发布新产品。</div>
+    <div class="cards-grid">
 
-<!-- Green Item 1 -->
-<tr><td style="padding:0 0 12px 0;">
-<table width="800" cellpadding="0" cellspacing="0" border="0"><tr><td style="background-color:#1e2130;border-left:4px solid #68a89a;border-radius:6px;padding:20px 24px;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr>
-<td style="font-size:12px;color:#68a89a;font-weight:bold;font-family:Arial,'Microsoft YaHei',sans-serif;">Microsoft 365</td>
-<td style="font-size:12px;color:#8a8fa3;text-align:right;font-family:Arial,'Microsoft YaHei',sans-serif;">2026-03-24 &nbsp;|&nbsp; 功能发布</td>
-</tr>
-<tr><td colspan="2" style="font-size:15px;font-weight:bold;color:#ffffff;padding:10px 0 8px 0;font-family:Arial,'Microsoft YaHei',sans-serif;">Copilot Chat新增PDF摘要与解释功能</td></tr>
-<tr><td colspan="2" style="font-size:13px;color:#c0c4d6;line-height:20px;font-family:Arial,'Microsoft YaHei',sans-serif;">Microsoft 365 Copilot Chat在Edge PDF阅读器中新增Summarize和Explain两项操作，用户可直接在PDF中生成摘要或简化复杂文本内容。</td></tr>
-<tr><td colspan="2" style="padding-top:10px;"><a href="https://releasebot.io/updates/microsoft/microsoft-copilot" style="font-size:12px;color:#4f8ef7;text-decoration:none;font-family:Arial,'Microsoft YaHei',sans-serif;">查看原文</a></td></tr>
-</table>
-</td></tr></table>
-</td></tr>
+      <div class="card red">
+        <span class="today-badge">🔥 TODAY</span>
+        <div class="card-product">Genspark</div>
+        <div class="card-title">Genspark推出AI代理平台面向企业工作流自动化</div>
+        <div class="card-summary">Genspark推出全新AI代理平台，结合仓储化与低代码理念，支持通过API整合n8n等自动化平台，实现零编码部署客服、销售及数据分析自动化服务。</div>
+        <div class="card-meta">
+          <span class="tag tag-event">功能发布</span>
+          <span class="tag tag-red">产品动态</span>
+        </div>
+        <div class="card-date">原文日期：2026-04-12</div>
+        <a class="btn-source" href="https://siuleeboss.com/ai-news/genspark-ai-agent-platform-shaping-workflow-2026-04-12/" target="_blank">查看来源 ↗</a>
+      </div>
 
-<!-- Footer -->
-<tr><td style="padding:30px 0 16px 0;">
-<table width="800" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid #2a2d3e;padding-top:20px;text-align:center;">
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-<tr><td style="font-size:11px;color:#5a5e73;line-height:18px;font-family:Arial,'Microsoft YaHei',sans-serif;">本周无新动态：AiPPT · 百度文库 · iSlide · Gamma · Beautiful.ai · Canva · 天工</td></tr>
-<tr><td style="font-size:11px;color:#5a5e73;line-height:18px;padding-top:6px;font-family:Arial,'Microsoft YaHei',sans-serif;">固定监测（共10款）：微软 Office 生态 · AiPPT · Genspark · 百度文库 · WPS AI · iSlide · Gamma · Beautiful.ai · Canva · 天工</td></tr>
-</table>
-</td></tr></table>
-</td></tr>
+      <div class="card red">
+        <div class="card-product">WPS AI</div>
+        <div class="card-title">WPS for Pad正式上线成为iPadOS首款原生桌面级办公应用</div>
+        <div class="card-summary">金山办公于4月8日正式推出WPS for Pad，作为iPadOS生态首款原生桌面级办公应用，内置WPS AI 3.0和WPS灵犀智能体，支持AI生成PPT、智能总结等功能。上线首日登顶苹果应用商店免费总榜。</div>
+        <div class="card-meta">
+          <span class="tag tag-event">功能发布</span>
+          <span class="tag tag-red">产品动态</span>
+        </div>
+        <div class="card-date">原文日期：2026-04-08</div>
+        <a class="btn-source" href="https://zqb.cyol.com/pc/content/202604/08/content_424379.html" target="_blank">查看来源 ↗</a>
+      </div>
 
-</table>
+    </div>
+  </div>
+
+  <!-- 市场动态 -->
+  <div class="section">
+    <div class="section-title"><span class="dot dot-yellow"></span> 市场动态</div>
+    <div class="section-summary">Genspark B轮融资完成，AI演示工具赛道独角兽诞生。</div>
+    <div class="cards-grid">
+
+      <div class="card yellow">
+        <div class="card-product">Genspark</div>
+        <div class="card-title">Genspark完成3.85亿美元B轮融资估值达16亿美元</div>
+        <div class="card-summary">Genspark于4月9日宣布完成3.85亿美元Series B融资，估值达16亿美元，成为独角兽。公司计划将资金用于AI代理平台的扩展，面向中小企业提供低代码智能工作流解决方案。</div>
+        <div class="card-meta">
+          <span class="tag tag-event">融资事件</span>
+          <span class="tag tag-yellow">市场动态</span>
+        </div>
+        <div class="card-date">原文日期：2026-04-09</div>
+        <a class="btn-source" href="https://www.bizjournals.com/sanjose/news/2026/04/09/genspark-wen-sang-founder-ai-unicorn.html" target="_blank">查看来源 ↗</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 行业趋势 -->
+  <div class="section">
+    <div class="section-title"><span class="dot dot-green"></span> 行业趋势</div>
+    <div class="section-summary">Copilot持续扩展AI内嵌文档处理能力。</div>
+    <div class="cards-grid">
+
+      <div class="card green">
+        <div class="card-product">Microsoft 365</div>
+        <div class="card-title">Copilot Chat新增PDF摘要与解释功能</div>
+        <div class="card-summary">Microsoft 365 Copilot Chat在Edge PDF阅读器中新增Summarize和Explain两项操作，用户可直接在PDF中生成摘要或简化复杂文本内容。</div>
+        <div class="card-meta">
+          <span class="tag tag-event">功能发布</span>
+          <span class="tag tag-green">行业趋势</span>
+        </div>
+        <div class="card-date">原文日期：2026-03-24</div>
+        <a class="btn-source" href="https://releasebot.io/updates/microsoft/microsoft-copilot" target="_blank">查看来源 ↗</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-note">
+    本周无新动态：AiPPT · 百度文库 · iSlide · Gamma · Beautiful.ai · Canva · 天工<br>
+    固定监测（共10款）：微软 Office 生态 · AiPPT · Genspark · 百度文库 · WPS AI · iSlide · Gamma · Beautiful.ai · Canva · 天工
+  </div>
+  <div class="footer-bar">OfficePLUS 竞品周报 | 数据截止 2026-04-14 | 由 Claude Code 自动生成</div>
+
+</div>
+
 </body>
 </html>
